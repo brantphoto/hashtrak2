@@ -8,6 +8,7 @@ gem 'rails', '4.0.4'
 gem 'pg'
 
 gem 'httparty'
+gem 'instagram'
 
 gem 'rails_12factor'
 
