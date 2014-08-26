@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140825212417) do
+ActiveRecord::Schema.define(version: 20140826013224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,5 +39,49 @@ ActiveRecord::Schema.define(version: 20140825212417) do
   end
 
   add_index "hashtag_feeds", ["category_id"], name: "index_hashtag_feeds_on_category_id", using: :btree
+
+  create_table "insta_users", force: true do |t|
+    t.string   "username"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.integer  "location_id"
+    t.integer  "insta_user_id"
+    t.integer  "hashtag_feed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["hashtag_feed_id"], name: "index_posts_on_hashtag_feed_id", using: :btree
+  add_index "posts", ["insta_user_id"], name: "index_posts_on_insta_user_id", using: :btree
+  add_index "posts", ["location_id"], name: "index_posts_on_location_id", using: :btree
+
+  create_table "related_hashtag_posts", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "related_hashtag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "related_hashtag_posts", ["post_id"], name: "index_related_hashtag_posts_on_post_id", using: :btree
+  add_index "related_hashtag_posts", ["related_hashtag_id"], name: "index_related_hashtag_posts_on_related_hashtag_id", using: :btree
+
+  create_table "related_hashtags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
