@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826172119) do
+ActiveRecord::Schema.define(version: 20140827100215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,10 +62,9 @@ ActiveRecord::Schema.define(version: 20140826172119) do
     t.integer  "hashtag_feed_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "post_date"
     t.string   "instagram_id"
-    t.string   "post_comment"
-    t.string   "post_caption"
+    t.json     "hashtag"
+    t.integer  "created_time"
   end
 
   add_index "posts", ["hashtag_feed_id"], name: "index_posts_on_hashtag_feed_id", using: :btree
