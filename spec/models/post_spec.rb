@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, :type => :model do
- before { @post = Post.create!(insta_user:InstaUser.first)}
+ before { @post = Post.create!(insta_user:InstaUser, hashtag_feed:HashtagFeed,
+related_hashtags:RelatedHashtag, related_hashtag_posts:RelatedHashtagPost)}
  subject { @post }
 
 # describe Post do
