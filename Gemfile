@@ -9,6 +9,7 @@ gem 'pg'
 
 gem 'httparty'
 gem 'instagram'
+gem 'd3-rails'
 
 gem 'rails_12factor'
 
