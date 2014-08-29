@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827173015) do
+ActiveRecord::Schema.define(version: 20140829180340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140827173015) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "auto_categorized", default: false
   end
 
   add_index "hashtag_feeds", ["category_id"], name: "index_hashtag_feeds_on_category_id", using: :btree
@@ -63,7 +64,7 @@ ActiveRecord::Schema.define(version: 20140827173015) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "instagram_id"
-    t.json     "hashtag"
+    t.json     "hashtags"
     t.integer  "created_time"
     t.json     "location"
   end
@@ -86,6 +87,7 @@ ActiveRecord::Schema.define(version: 20140827173015) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_spam",    default: false
   end
 
 end
