@@ -28,14 +28,26 @@ class PostsController < ApplicationController
     parsedobj1 = JSON.parse(presponse.body)
     sizer = parsedobj1['data']['media_count']
     namer = parsedobj1['data']['name']
-      if HashtagFeed.exists?(:name => namer)
-        x = HashtagFeed.where(:name => namer).first
-        HashSize.create(size:sizer, hashtag_feed: x)
-      else 
-        y = HashtagFeed.create(name: namer)
-        HashSize.create(size: sizer, hashtag_feed: y)
-      end
+    if HashtagFeed.exists?(:name => namer)
+      x = HashtagFeed.where(:name => namer).first
+      HashSize.create(size:sizer, hashtag_feed: x)
+    else 
+      y = HashtagFeed.create(name: namer)
+      HashSize.create(size: sizer, hashtag_feed: y)
     end
+  end
+
+  def relate_to_tag(pozt)
+    array = pozt.hashtag
+    array.each do |t|
+    if RelatedHashtag.exists?(:name => t)
+      x = RelatedHashtag.where(:name => t).first
+      RelatedHashtagPost.create(related_hashtag:x, post:pozt)
+    else
+      x = RelatedHashtag.create(name:t)
+      RelatedHashtagPost.create(related_hashtag:x, post:pozt)
+    end
+  end
 
 
   def show
