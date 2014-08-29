@@ -6,13 +6,7 @@ class HashtagFeed < ActiveRecord::Base
 
   #needs to be refactored so it can be DRY
   #validates the attributes within hashtag feed model
-  validates :username, presence: true
-  validates_uniqueness_of :username
-
-  #probably implied already, will have to delete this most likely
-  #validates :created_at, presence: true
-  #validates :updated_at, presence: true
-
-
-
+  validates :name, presence: true
+  validates_uniqueness_of :name
+ 
 end
