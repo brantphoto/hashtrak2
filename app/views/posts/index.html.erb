@@ -5,7 +5,7 @@ Welcome to our Post Index Page!!
 
 <% @posts.each do |p|  %>
   <% p.instagram_id %><br><br> 
-  <% p.hashtag.each do |z| %>
+  <% p.hashtags.each do |z| %>
       <%= z %> <br>
   <%end%>
     <br>
