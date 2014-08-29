@@ -22,6 +22,21 @@ class PostsController < ApplicationController
     end
   end
 
+  def findsize(hashtag)
+
+    presponse = HTTParty.get("https://api.instagram.com/v1/tags/#{hashtag}?client_id=e7e5e08b2c444bf5a395ff0d1e5427be")
+    parsedobj1 = JSON.parse(presponse.body)
+    sizer = parsedobj1['data']['media_count']
+    namer = parsedobj1['data']['name']
+      if HashtagFeed.exists?(:name => namer)
+        x = HashtagFeed.where(:name => namer).first
+        HashSize.create(size:sizer, hashtag_feed: x)
+      else 
+        y = HashtagFeed.create(name: namer)
+        HashSize.create(size: sizer, hashtag_feed: y)
+      end
+    end
+
 
   def show
   end
