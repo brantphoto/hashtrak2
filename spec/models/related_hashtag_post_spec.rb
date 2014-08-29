@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe RelatedHashtagPost, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+ before { @relatedhashtagpost = RelatedHashtagPost.create!()}
+ subject { @relatedhashtagpost }
+
+	it { should belong_to(:related_hashtag) }
+	it { should belong_to(:posts) }
 end
