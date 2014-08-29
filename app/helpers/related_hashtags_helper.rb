@@ -1,0 +1,2 @@
+module RelatedHashtagsHelper
+end
