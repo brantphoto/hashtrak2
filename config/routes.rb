@@ -1,4 +1,8 @@
 Hashtrek::Application.routes.draw do
+  get "searches/index"
+  get "searches/new"
+  get "searches/create"
+  get "searches/destroy"
   get "related_hashtags/index"
   get "related_hashtags/new"
   get "related_hashtags/create"
@@ -17,6 +21,7 @@ Hashtrek::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#home'
 
+  resources :searches
   resources :hashtag_feeds do
     resources :related_hashtags
   end 

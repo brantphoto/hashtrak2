@@ -2,6 +2,7 @@ class HashtagFeed < ActiveRecord::Base
   belongs_to :category
   has_many :hash_sizes
   has_many :posts
+  has_many :searches
 
 
   #needs to be refactored so it can be DRY
