@@ -5,12 +5,12 @@ class Post < ActiveRecord::Base
   has_many :related_hashtag_posts
   has_many :related_hashtags, through: :related_hashtag_posts
 
-  validates :instagram_id, presence: true
-  validates_uniqueness_of :instagram_id
+  # validates :instagram_id, presence: true
+  # validates_uniqueness_of :instagram_id
 
-  validates :hashtag, presence: true
+  # validates :hashtags, presence: true
 
-  validates :insta_user_id, presence: true
+  # validates :insta_user_id, presence: true
   
 
 end

@@ -12,11 +12,12 @@
  *= require_tree .
  */
 
+
+@import 'bootstrap';
+
 .bnw {
   color:black
 }
-
-@import 'bootstrap';
 
 * {margin: 0; padding: 0;}
 
