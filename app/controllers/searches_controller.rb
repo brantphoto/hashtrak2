@@ -10,7 +10,7 @@ class SearchesController < ApplicationController
     @search = Search.new(params.require(:search).permit(:topic))
     if @search.save
       recentposts(@search.topic)
-      redirect_to hashtag_feed_path(@y.id)
+      redirect_to hashtag_feed_related_hashtags_path(@y.id)
     else
       respond_to do |format|
         format.html { render action: 'new' }

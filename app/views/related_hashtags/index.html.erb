@@ -1,2 +1,7 @@
-<h1>RelatedHashtags#index</h1>
-<p>Find me in app/views/related_hashtags/index.html.erb</p>
+<div class="bnw">
+	<% @posts.each do |x| %>
+		<% x.related_hashtags.each do |i| %>
+			<%= i.name %> 
+		<% end %>
+	<% end %>
+</div> 

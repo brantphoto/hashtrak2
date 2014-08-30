@@ -1,5 +1,9 @@
 class RelatedHashtagsController < ApplicationController
+  before_action :get_hashtag_feed
+  
   def index
+    @posts = @hashtag_feed.posts
+    @hashtag_feeds = HashtagFeed.all
   end
 
   def new
@@ -17,4 +21,11 @@ class RelatedHashtagsController < ApplicationController
 
   def destroy
   end
+
+  private 
+  def get_hashtag_feed
+    @hashtag_feed = HashtagFeed.find(params[:hashtag_feed_id])
+  end
+
+ 
 end
