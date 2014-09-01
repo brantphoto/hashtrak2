@@ -10,6 +10,7 @@ class RelatedHashtagsController < ApplicationController
       end
     end
     @hasher = @hasher.sort_by {|k,v| v}.reverse
+    @hasher.delete_if {|key, value| key == @hashtag_feed.name }
     @hashtag_feeds = HashtagFeed.all
   end
 
