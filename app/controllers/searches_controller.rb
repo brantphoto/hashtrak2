@@ -42,7 +42,8 @@ class SearchesController < ApplicationController
       id = i['id']
       date = i['created_time']
       location = i['location']
-      p = Post.create(hashtags:tags, instagram_id:id, created_time:date, hashtag_feed:@y)
+      iguser = i['user']['id']
+      p = Post.create(hashtags:tags, instagram_id:id, created_time:date, hashtag_feed:@y, location:location, insta_user_id:iguser)
       relate_to_tag(p)
     end
   end
