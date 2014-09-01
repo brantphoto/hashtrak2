@@ -43,10 +43,17 @@ class SearchesController < ApplicationController
       date = i['created_time']
       location = i['location']
       iguser = i['user']['id']
-      p = Post.create(hashtags:tags, instagram_id:id, created_time:date, hashtag_feed:@y, location:location, insta_user_id:iguser)
+      if InstaUser.exists?(:userid => iguser)
+        @z = InstaUser.where(:userid => iguser).first     
+      else 
+        @z = InstaUser.create(userid: iguser)
+      end
+      p = Post.create(hashtags:tags, instagram_id:id, created_time:date, hashtag_feed:@y, insta_user:@z)
       relate_to_tag(p)
     end
   end
+
+
 
   def relate_to_tag(pozt)
     array = pozt.hashtags
