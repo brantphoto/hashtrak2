@@ -4,8 +4,10 @@ class RelatedHashtagsController < ApplicationController
   def index
     @hasher = Hash.new
     @posts = @hashtag_feed.posts
+
     @posts.each do |y|
-      y.related_hashtags.each do |z|
+      @related_hashtags = y.related_hashtags.where(is_spam:false).all
+      @related_hashtags.each do |z|
         @hasher[z.name] = z.posts.where(hashtag_feed:@hashtag_feed).count
       end
     end
