@@ -12,6 +12,7 @@ class SearchesController < ApplicationController
     if @search.save
       recentposts(@search.topic)
       @search.hashtag_feed = @y
+      @search.save
       redirect_to hashtag_feed_related_hashtags_path(@y.id)
     else
       respond_to do |format|
