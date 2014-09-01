@@ -8,9 +8,10 @@ class SearchesController < ApplicationController
 
 # hello this is a secret message. 
   def create
-    @search = Search.new(params.require(:search).permit(:topic))
+    @search = Search.new(params.require(:search).permit(:topic, :hashtag_feed))
     if @search.save
       recentposts(@search.topic)
+      @search.hashtag_feed = @y
       redirect_to hashtag_feed_related_hashtags_path(@y.id)
     else
       respond_to do |format|
