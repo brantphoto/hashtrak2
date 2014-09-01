@@ -2,14 +2,14 @@ class RelatedHashtagsController < ApplicationController
   before_action :get_hashtag_feed
   
   def index
+    @hasher = Hash.new
     @posts = @hashtag_feed.posts
-    @array = []
-    @posts.each do |x|
-      x.related_hashtags.each do |y|
-        @array.push(y)
+    @posts.each do |y|
+      y.related_hashtags.each do |z|
+        @hasher[z.name] = z.posts.where(hashtag_feed:@hashtag_feed).count
       end
     end
-    @array = @array.uniq
+    @hasher = @hasher.sort_by {|k,v| v}.reverse
     @hashtag_feeds = HashtagFeed.all
   end
 
