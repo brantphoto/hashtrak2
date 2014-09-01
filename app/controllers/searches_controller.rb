@@ -6,6 +6,7 @@ class SearchesController < ApplicationController
   	@search = Search.new
   end
 
+# hello this is a secret message. 
   def create
     @search = Search.new(params.require(:search).permit(:topic))
     if @search.save
