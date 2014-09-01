@@ -8,12 +8,17 @@ gem 'rails', '4.0.4'
 gem 'pg'
 
 gem 'httparty'
+
+#this helps us facilitate our api request. Used in search controller.
 gem 'instagram'
+
+#an instagram 
 gem 'd3-rails'
 
+#lets us access our D3 libary. We put access this in application.js in our assets
 gem 'rails_12factor'
 
-# Use SCSS for stylesheets
+# SASS is used to trick out our stylesheet and bootstrap is also dependent on it
 gem 'sass-rails', '~> 4.0.2'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -24,8 +29,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
