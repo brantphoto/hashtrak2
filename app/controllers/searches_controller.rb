@@ -52,7 +52,7 @@ class SearchesController < ApplicationController
         @z = InstaUser.create(userid: iguser, username: igusername)
       end
       if Post.exists?(:instagram_id => id) === false
-        p = Post.create(hashtags:tags, instagram_id:id, created_time:date, hashtag_feed:@y, insta_user:@z)
+        p = Post.create(hashtags:tags, instagram_id:id, location:location, created_time:date, hashtag_feed:@y, insta_user:@z)
         relate_to_tag(p)
       else
       end
