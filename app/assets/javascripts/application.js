@@ -18,3 +18,8 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+$('#nav').affix({
+      offset: {
+        top: $('header').height()
+      }
+});	
