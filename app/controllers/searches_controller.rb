@@ -22,6 +22,23 @@ class SearchesController < ApplicationController
     end
   end
 
+  def creator(allrelatedhashes)
+    allrelatedhashes.each do |r|
+      @search = Search.create(topic:r.name)
+      if @search.save
+        recentposts(@search.topic)
+        @search.hashtag_feed = @y
+        @search.save
+        sleep 2
+      else
+        respond_to do |format|
+          format.html { render action: 'new' }
+          format.json { render json: @search.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  end
+
   def recentposts(hashfeed)
 
     presponse = HTTParty.get("https://api.instagram.com/v1/tags/#{hashfeed}?client_id=e7e5e08b2c444bf5a395ff0d1e5427be")
