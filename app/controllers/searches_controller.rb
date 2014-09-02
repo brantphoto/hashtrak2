@@ -45,10 +45,11 @@ class SearchesController < ApplicationController
       date = i['created_time']
       location = i['location']
       iguser = i['user']['id']
+      igusername = i['user']['username']
       if InstaUser.exists?(:userid => iguser)
         @z = InstaUser.where(:userid => iguser).first     
       else 
-        @z = InstaUser.create(userid: iguser)
+        @z = InstaUser.create(userid: iguser, username: igusername)
       end
       if Post.exists?(:instagram_id => id) === false
         p = Post.create(hashtags:tags, instagram_id:id, created_time:date, hashtag_feed:@y, insta_user:@z)
