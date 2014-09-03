@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require d3
+//= require Chart
 //= require angular.min
 //= require jquery
 //= require bootstrap-sprockets

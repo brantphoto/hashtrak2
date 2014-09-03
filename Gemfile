@@ -12,8 +12,8 @@ gem 'httparty'
 #this helps us facilitate our api request. Used in search controller.
 gem 'instagram'
 
-#an instagram 
-gem 'd3-rails'
+#an instagram
+gem 'chart-js-rails'
 
 #lets us access our D3 libary. We put access this in application.js in our assets
 gem 'rails_12factor'
