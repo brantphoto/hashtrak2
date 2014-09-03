@@ -13,6 +13,11 @@
  */
 @import 'bootstrap';
 
+.form-control {
+    width: 75%;
+    height:70px;
+    font-size: 30px;
+}
 
 .navbar-form input, .form-inline input {
     width:auto;
