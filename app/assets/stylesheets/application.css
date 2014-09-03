@@ -12,3 +12,249 @@
  *= require_tree .
  */
 @import 'bootstrap';
+
+
+.navbar-form input, .form-inline input {
+    width:auto;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10;
+}
+
+
+header {
+    height:280px;
+}
+
+
+
+#DIV_1 {
+    box-sizing: border-box;
+    color: rgb(12, 23, 30);
+    height: 146px;
+    position: relative;
+    text-align: center;
+    text-transform: capitalize;
+    width: 940px;
+    perspective-origin: 470px 73px;
+    transform-origin: 470px 73px;
+    border: 0px none rgb(12, 23, 30);
+    font: normal normal normal 14px/22px Lato, sans-serif;
+    margin: 0px 135px;
+    outline: rgb(12, 23, 30) none 0px;
+    overflow: hidden;
+    padding: 24px 0px;
+}/*#DIV_1*/
+
+#DIV_2 {
+    box-sizing: border-box;
+    color: rgb(12, 23, 30);
+    height: 98px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 960px;
+    perspective-origin: 480px 49px;
+    transform-origin: 480px 49px;
+    border: 0px none rgb(12, 23, 30);
+    font: normal normal normal 14px/22px Lato, sans-serif;
+    margin: 0px 0px 0px -20px;
+    outline: rgb(12, 23, 30) none 0px;
+}/*#DIV_2*/
+
+#DIV_2:after {
+    clear: both;
+    color: rgb(12, 23, 30);
+    display: table;
+    text-align: center;
+    text-transform: capitalize;
+    width: 1px;
+    perspective-origin: 0.5px 0px;
+    transform-origin: 0.5px 0px;
+    content: '';
+    border: 0px none rgb(12, 23, 30);
+    font: normal normal normal 14px/0px Lato, sans-serif;
+    outline: rgb(12, 23, 30) none 0px;
+}/*#DIV_2:after*/
+
+#DIV_2:before {
+    color: rgb(12, 23, 30);
+    display: table;
+    text-align: center;
+    text-transform: capitalize;
+    width: 1px;
+    perspective-origin: 0.5px 0px;
+    transform-origin: 0.5px 0px;
+    content: '';
+    border: 0px none rgb(12, 23, 30);
+    font: normal normal normal 14px/0px Lato, sans-serif;
+    outline: rgb(12, 23, 30) none 0px;
+}/*#DIV_2:before*/
+
+#DIV_3, #DIV_7, #DIV_11, #DIV_15 {
+    box-sizing: border-box;
+    color: rgb(12, 23, 30);
+    float: left;
+    height: 98px;
+    min-height: 1px;
+    opacity: 0.999999940395355;
+    text-align: center;
+    text-transform: capitalize;
+    width: 220px;
+    z-index: 0;
+    perspective-origin: 110px 49px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: 110px 49px;
+    border: 0px none rgb(12, 23, 30);
+    font: normal normal normal 14px/22px Lato, sans-serif;
+    margin: 0px 0px 0px 20px;
+    outline: rgb(12, 23, 30) none 0px;
+}/*#DIV_3, #DIV_7, #DIV_11, #DIV_15*/
+
+#A_4 {
+    box-sizing: border-box;
+    color: rgb(253, 114, 125);
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: 0px none rgb(253, 114, 125);
+    font: normal normal normal 14px/22px Lato, sans-serif;
+    outline: rgb(253, 114, 125) none 0px;
+    transition: all 0.2s ease-out 0s;
+}/*#A_4*/
+
+#SPAN_5 {
+    box-sizing: border-box;
+    color: rgb(253, 114, 125);
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: top;
+    border: 0px none rgb(253, 114, 125);
+    font: normal normal normal 70px/70px Lato, sans-serif;
+    outline: rgb(253, 114, 125) none 0px;
+    transition: all 0.1s ease 0s;
+}/*#SPAN_5*/
+
+#SPAN_5:before {
+    color: rgb(253, 114, 125);
+    speak: none;
+    text-align: center;
+    content:url(smiley.gif);
+    border: 0px none rgb(253, 114, 125);
+    font: normal normal normal 70px/70px streamline-icons;
+    outline: rgb(253, 114, 125) none 0px;
+}/*#SPAN_5:before*/
+
+#P_6 {
+    box-sizing: border-box;
+    clear: both;
+    color: rgb(253, 114, 125);
+    height: 22px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 220px;
+    perspective-origin: 110px 11px;
+    transform-origin: 110px 11px;
+    border: 0px none rgb(253, 114, 125);
+    font: normal normal normal 14px/22px Lato, sans-serif;
+    margin: 0px;
+    outline: rgb(253, 114, 125) none 0px;
+}/*#P_6*/
+
+#A_8, #A_12, #A_16 {
+    box-sizing: border-box;
+    color: rgb(99, 99, 99);
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: 0px none rgb(99, 99, 99);
+    font: normal normal normal 14px/22px Lato, sans-serif;
+    outline: rgb(99, 99, 99) none 0px;
+    transition: all 0.2s ease-out 0s;
+}/*#A_8, #A_12, #A_16*/
+
+#SPAN_9 {
+    box-sizing: border-box;
+    color: rgb(99, 99, 99);
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: top;
+    border: 0px none rgb(99, 99, 99);
+    font: normal normal normal 70px/70px Lato, sans-serif;
+    outline: rgb(99, 99, 99) none 0px;
+    transition: all 0.1s ease 0s;
+}/*#SPAN_9*/
+
+#SPAN_9:before {
+    color: rgb(99, 99, 99);
+    speak: none;
+    text-align: center;
+    content: 'H';
+    border: 0px none rgb(99, 99, 99);
+    font: normal normal normal 70px/70px streamline-icons;
+    outline: rgb(99, 99, 99) none 0px;
+}/*#SPAN_9:before*/
+
+#P_10, #P_14, #P_18 {
+    box-sizing: border-box;
+    clear: both;
+    color: rgb(99, 99, 99);
+    height: 22px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 220px;
+    perspective-origin: 110px 11px;
+    transform-origin: 110px 11px;
+    border: 0px none rgb(99, 99, 99);
+    font: normal normal normal 14px/22px Lato, sans-serif;
+    margin: 0px;
+    outline: rgb(99, 99, 99) none 0px;
+}/*#P_10, #P_14, #P_18*/
+
+#SPAN_13 {
+    box-sizing: border-box;
+    color: rgb(99, 99, 99);
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: top;
+    border: 0px none rgb(99, 99, 99);
+    font: normal normal normal 70px/70px Lato, sans-serif;
+    outline: rgb(99, 99, 99) none 0px;
+    transition: all 0.1s ease 0s;
+}/*#SPAN_13*/
+
+#SPAN_13:before {
+    color: rgb(99, 99, 99);
+    speak: none;
+    text-align: center;
+    content: 'P';
+    border: 0px none rgb(99, 99, 99);
+    font: normal normal normal 70px/70px streamline-icons;
+    outline: rgb(99, 99, 99) none 0px;
+}/*#SPAN_13:before*/
+
+#SPAN_17 {
+    box-sizing: border-box;
+    color: rgb(99, 99, 99);
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: top;
+    border: 0px none rgb(99, 99, 99);
+    font: normal normal normal 70px/70px Lato, sans-serif;
+    outline: rgb(99, 99, 99) none 0px;
+    transition: all 0.1s ease 0s;
+}/*#SPAN_17*/
+
+#SPAN_17:before {
+    color: rgb(99, 99, 99);
+    speak: none;
+    text-align: center;
+    content: 'M';
+    border: 0px none rgb(99, 99, 99);
+    font: normal normal normal 70px/70px streamline-icons;
+    outline: rgb(99, 99, 99) none 0px;
+}/*#SPAN_17:before*/
+
