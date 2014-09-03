@@ -1,7 +1,9 @@
 <div class="container">
+	
 
 <%= form_for @search, :html => {class: "form-group"} do |f| %>
 	<%= f.text_field :topic, class: "form-control", placeholder: "Put a hashtag name in here, no # for now" %><br/>	
 	<%= f.submit class:"btn btn-default" %>
 <% end %>
+
 </div>

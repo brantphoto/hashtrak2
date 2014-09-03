@@ -13,14 +13,9 @@
  */
 @import 'bootstrap';
 
-/* bootstrap 3 helpers */
 
 .navbar-form input, .form-inline input {
     width:auto;
-}
-
-header {
-    height:280px;
 }
 
 #nav.affix {
@@ -29,6 +24,13 @@ header {
     width: 100%;
     z-index:10;
 }
+
+
+header {
+    height:280px;
+}
+
+
 
 #DIV_1 {
     box-sizing: border-box;
@@ -140,7 +142,7 @@ header {
     color: rgb(253, 114, 125);
     speak: none;
     text-align: center;
-    content: 'h';
+    content:url(smiley.gif);
     border: 0px none rgb(253, 114, 125);
     font: normal normal normal 70px/70px streamline-icons;
     outline: rgb(253, 114, 125) none 0px;
@@ -190,7 +192,7 @@ header {
     color: rgb(99, 99, 99);
     speak: none;
     text-align: center;
-    content: 'm';
+    content: 'H';
     border: 0px none rgb(99, 99, 99);
     font: normal normal normal 70px/70px streamline-icons;
     outline: rgb(99, 99, 99) none 0px;
@@ -228,7 +230,7 @@ header {
     color: rgb(99, 99, 99);
     speak: none;
     text-align: center;
-    content: 'b';
+    content: 'P';
     border: 0px none rgb(99, 99, 99);
     font: normal normal normal 70px/70px streamline-icons;
     outline: rgb(99, 99, 99) none 0px;
@@ -250,7 +252,7 @@ header {
     color: rgb(99, 99, 99);
     speak: none;
     text-align: center;
-    content: 'c';
+    content: 'M';
     border: 0px none rgb(99, 99, 99);
     font: normal normal normal 70px/70px streamline-icons;
     outline: rgb(99, 99, 99) none 0px;
