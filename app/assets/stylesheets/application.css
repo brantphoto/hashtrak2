@@ -13,6 +13,24 @@
  */
 @import 'bootstrap';
 
+.maincontent {
+
+     position:absolute;
+     top:30%;
+     left:20%;
+}
+.hashtrek {
+    text-align: center;
+    font-size: 100px;
+}
+.gimmicks {
+    text-align: center;
+    font-size: 50px;
+}
+.searchbar {
+    padding-top: 50px;
+}
+
 .form-control {
     width: 75%;
     height:70px;
@@ -147,7 +165,7 @@ header {
     color: rgb(253, 114, 125);
     speak: none;
     text-align: center;
-    content:url(smiley.gif);
+    content: 'R';
     border: 0px none rgb(253, 114, 125);
     font: normal normal normal 70px/70px streamline-icons;
     outline: rgb(253, 114, 125) none 0px;
@@ -197,7 +215,7 @@ header {
     color: rgb(99, 99, 99);
     speak: none;
     text-align: center;
-    content: 'H';
+    content: url(http://cdn.flaticon.com/png/64/38807.png);
     border: 0px none rgb(99, 99, 99);
     font: normal normal normal 70px/70px streamline-icons;
     outline: rgb(99, 99, 99) none 0px;
@@ -235,7 +253,7 @@ header {
     color: rgb(99, 99, 99);
     speak: none;
     text-align: center;
-    content: 'P';
+    content: url(https://cdn4.iconfinder.com/data/icons/rcons-user/32/user_group_users_accounts_contacts-64.png);
     border: 0px none rgb(99, 99, 99);
     font: normal normal normal 70px/70px streamline-icons;
     outline: rgb(99, 99, 99) none 0px;

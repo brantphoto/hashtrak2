@@ -1,9 +1,21 @@
 <div class="container">
-	
 
-<%= form_for @search, :html => {class: "form-group"} do |f| %>
-	<%= f.text_field :topic, class: "form-control", placeholder: "Put a hashtag name in here, no # for now" %><br/>	
-	<%= f.submit class:"btn btn-default" %>
-<% end %>
+	<div class="maincontent">
+		<div class="tagline">
+			<h1 class="hashtrek">Hashtrek</h1>
+			<h2 class="gimmicks">No Gimmicks. Straight Data. Pure Profit.</h2>
+
+			<center>
+			<div class="searchbar">
+				<%= form_for @search, :html => {class: "form-group"} do |f| %>
+				<%= f.text_field :topic, class: "form-control", placeholder: "Put a hashtag name in here, no # for now" %><br/>	
+			</div>
+		</center>
+			<div class="submit-button">
+				
+				<% end %>
+			</div>
+		</div>
+	</div>
 
 </div>
