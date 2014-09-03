@@ -14,12 +14,19 @@
 //= require jquery_ujs
 //= require Chart
 //= require angular.min
+//= require angular-resource
+//= require angular-rails-templates
 //= require jquery
-//= require bootstrap-sprockets
+//= require_tree ../templates
 //= require_tree .
 
-$('#nav').affix({
-      offset: {
-        top: $('header').height()
-      }
-});	
+
+
+
+
+
+// $('#nav').affix({
+//       offset: {
+//         top: $('header').height()
+//       }
+// });	

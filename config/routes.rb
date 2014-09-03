@@ -1,10 +1,4 @@
 Hashtrek::Application.routes.draw do
-  #the main thing here is looking at the new root and knowing where
-  #you are going. Since we set the root to searches#new that means we call
-  #on the new action of the search controller and will be looking at the
-  #new.html.erb that is found in the views for SEARCHES. 
-  root 'searches#new'
-
   get "searches/index"
   get "searches/new"
   get "searches/create"
@@ -25,11 +19,14 @@ Hashtrek::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-
+  root 'searches#new'
+  
   resources :searches
+
   resources :hashtag_feeds do
-    resources :related_hashtags
+    resources :related_hashtags, default: {format: :json}
   end 
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

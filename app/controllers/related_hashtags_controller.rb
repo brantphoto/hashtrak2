@@ -1,5 +1,6 @@
 class RelatedHashtagsController < ApplicationController
   before_action :get_hashtag_feed
+  respond_to :html, :json
   
   def index
     @hasher = Hash.new
@@ -14,6 +15,8 @@ class RelatedHashtagsController < ApplicationController
     @hasher = @hasher.sort_by {|k,v| v}.reverse
     @hasher.delete_if {|key, value| key == @hashtag_feed.name }
     @hashtag_feeds = HashtagFeed.all
+
+    respond_with @hasher
   end
 
   def new
