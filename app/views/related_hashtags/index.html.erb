@@ -1,24 +1,52 @@
 <div class="container">
-	<%= link_to 'Back', root_path %>
-<div ng-app="relatedManager">
-  <div ng-controller="RelatedCtrl as r">
-    {{ x1 }} {{ x2 }} {{ x3 }} {{ x4 }} {{ x5 }}
-    {{ y1 }} {{ y2 }} {{ y3 }} {{ xy4 }} {{ y5 }}
 
-    {{ r.test }}
-  <li ng-repeat="a in tags">
+  <!-- var xAxis = ["{{ x1 }}", "{{ x2 }}", "{{ x3 }}", "{{ x4 }}", "{{ x5 }}"]; -->
+
+  <%= link_to 'Back', root_path %>
+
+  <div class="bnw">
+
+    <h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
+    <%@hasher.each do |x| %>
+    <%= x[0] %> <br> <%= x[1] %> <br>
+    <% end %>
+  </div> 
+  <div ng-app="relatedManager">
+    <div ng-controller="RelatedCtrl as r">
+      {{ x1 }} {{ x2 }} {{ x3 }} {{ x4 }} {{ x5 }}
+      {{ y1 }} {{ y2 }} {{ y3 }} {{ xy4 }} {{ y5 }} {{ chartAxis }}
+
+      <h1>Hashtags Most Often Related To This Hashtag </h1>
+
+      <!-- <div ng-init="name1 = {{x1}}"></div> -->
+
+      <canvas id="myChart" width="500" height="400">
+        <script>
+        
+          // console.log("test"+ $scope.name1);
+          // var chartNames = [["{{ r.x1 }}"], ["{{ r.x2 }}"], ["{{ r.x3 }}"]];
+          // var chartData = [ "{{ y1 }}"]
+
+      var barChartLocData = {
+        labels :  [["{{ r.x1 }}" ],["{{ r.x2 }}"],["{{ r.x3 }}"],["{{ r.x4 }}"], ["{{ r.x5 }}"]],
+        datasets : [
+        {
+         fillColor : "steelblue",
+         strokeColor : "steelblue",
+         pointColor : "rgba(220,220,220,1)",
+         pointStrokeColor : "#fff",
+         data : [65,59,90,81,56]
+       }
+       ]
+     };
+
+     var mybarChartLoc = new Chart(document.getElementById("myChart").getContext("2d")).Bar
+     (barChartLocData);
+     </script>
+
+   </canvas>
+   <li ng-repeat="a in tags">
     {{ a[0] }} {{a[1]}}
   </li>
-    </div>
+</div><br>
 
-  </div>
-</div>
-
-<div class="bnw">
-
-  <h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
-   <%@hasher.each do |x| %>
-     <%= x[0] %> <br> <%= x[1] %> <br>
-   <% end %>
-</div> 
-</div>

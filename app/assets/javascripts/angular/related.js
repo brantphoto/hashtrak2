@@ -15,6 +15,7 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'RelatedHashtag', function($
       $scope.y3 = tags[2][1]
       $scope.y4 = tags[3][1]
       $scope.y5 = tags[4][1]
+      $scope.chartAxis = [tags[0][0],tags[1][0],tags[2][0],tags[3][0],tags[4][0]]
 
       // $scope. = tags[0];
 
