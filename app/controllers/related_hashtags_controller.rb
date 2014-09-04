@@ -16,6 +16,7 @@ class RelatedHashtagsController < ApplicationController
     @hasher.delete_if {|key, value| key == @hashtag_feed.name }
     @hashtag_feeds = HashtagFeed.all
 
+    logger.debug @hasher
     respond_with @hasher
   end
 

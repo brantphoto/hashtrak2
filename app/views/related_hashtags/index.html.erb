@@ -3,10 +3,11 @@
 <div ng-app="relatedManager">
   <div ng-controller="RelatedCtrl as r">
     {{ r.test }}
-    {{ r.tags }}
-<!--     <div ng-repeat="r in tags">
-      {{r.name}}
-    </div> -->
+  <li ng-repeat="a in tags">
+    {{ a[0] }} {{a[1]}}
+  </li>
+    </div>
+
   </div>
 </div>
 

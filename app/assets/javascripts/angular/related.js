@@ -1,9 +1,10 @@
-relatedManager.controller('RelatedCtrl', ['$scope', 'Related_Hashtag', function($scope, Related_Hashtag){
+relatedManager.controller('RelatedCtrl', ['$scope', 'RelatedHashtag', function($scope, RelatedHashtag){
 
 	this.test = 'fuck yeah angular';
 
-	Related_Hashtag.query(function(json){
+	RelatedHashtag.query(function(json){
       $scope.tags = json;
+      console.log(json);
 	})
 
 
