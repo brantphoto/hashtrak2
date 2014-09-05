@@ -1,4 +1,8 @@
 
+##--color
+##--require spec_helper
+
+
 RSpec.describe RelatedHashtagsController do 
   describe "get_hashtag_feed" do
     it "should return @related_hashtags" do
@@ -13,23 +17,18 @@ RSpec.describe RelatedHashtagsController do
     it { should_not include(@hashtag_feed.name) }
   end
   
-  describe hashtag_feed do
-    it 
-    ## def get_hashtag_feed
-    ## @hashtag_feed = HashtagFeed.find(params[:hashtag_feed_id])
-  end
-    
-    
-    
-  
+ describe hashtag_feed do
+    context "with id parameters" do
+    { get :hashtag_feed_id => @hashtag_feed }
+    it "returns of hash of hashtag_feed with id params"
+    expect (json['hashtag_feed'].to have_key('hashtag_feed_id'))
   end
   
+end
   
   
   
   
   
-
-##--color
-##--require spec_helper
+  
 
