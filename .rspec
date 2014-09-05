@@ -5,11 +5,17 @@ RSpec.describe RelatedHashtagsController do
       related_hashtags = hashtag_feed.posts
       get :hashtag_feed
       expect(assigns:related_hashtags)).to eq[hasher]
-        end
+  end
     
   describe hasher do
-    it "should have_at_least(1).items"
-      end
+    it { should have_at_least(1).items }
+    it { should_not include(nil) }
+    it { should_not include(@hashtag_feed.name }
+  end
+  
+  
+  
+  
   
   ## next test -->(make sure hasher doesn't contain the originally queried hashtag) @hasher.delete_if {|key, value| key == @hashtag_feed.name }
   
