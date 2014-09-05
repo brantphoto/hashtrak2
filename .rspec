@@ -13,6 +13,19 @@ RSpec.describe RelatedHashtagsController do
     it { should_not include(@hashtag_feed.name) }
   end
   
+  describe hashtag_feed do
+    it 
+    ## def get_hashtag_feed
+    ## @hashtag_feed = HashtagFeed.find(params[:hashtag_feed_id])
+  end
+    
+    
+    
+  ## @hasher = @hasher.sort_by {|k,v| v}.reverse
+    
+  
+  end
+  
   
   
   
