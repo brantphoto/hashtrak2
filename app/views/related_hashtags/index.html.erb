@@ -2,13 +2,12 @@
 	<%= link_to 'Back', root_path %>
 <div ng-app="relatedManager">
   <div ng-controller="RelatedCtrl as r">
-    {{ x1 }} {{ x2 }} {{ x3 }} {{ x4 }} {{ x5 }}
-    {{ y1 }} {{ y2 }} {{ y3 }} {{ xy4 }} {{ y5 }}
-
     {{ r.test }}
-  <li ng-repeat="a in tags">
+  <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas>
+
+<!--   <li ng-repeat="a in tags">
     {{ a[0] }} {{a[1]}}
-  </li>
+  </li> -->
     </div>
 
   </div>

@@ -1,4 +1,4 @@
-var relatedManager = angular.module('relatedManager', ['ngResource']).config(
+var relatedManager = angular.module('relatedManager', ['ngResource', 'angles']).config(
 	['$httpProvider', function($httpProvider) {
     var authToken = angular.element("meta[name=\"csrf-token\"]").attr("content");
     var defaults = $httpProvider.defaults.headers;

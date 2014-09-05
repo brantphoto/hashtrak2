@@ -19,8 +19,7 @@
 //= require jquery
 //= require_tree ../templates
 //= require_tree .
-
-
+//= require angular/angles
 
 
 
