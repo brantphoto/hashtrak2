@@ -1,9 +1,12 @@
 
 RSpec.describe RelatedHashtagsController do 
   describe "get_hashtag_feed" do
-    it "should return related hashtag feed for given query" do
-
-  
+    it "should return @related_hashtags" do
+      related_hashtags = hashtag_feed.posts
+      get :hashtag_feed
+      expect(..(:related_hashtags)).to eq[hasher]
+    end
+      
 end
 
 ## I wanna use this too....more comin'...
