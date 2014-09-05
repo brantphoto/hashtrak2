@@ -4,7 +4,7 @@
 
 
 RSpec.describe RelatedHashtagsController do 
-  describe "get_hashtag_feed" do
+  describe get_hashtag_feed do
     it "should return @related_hashtags" do
       related_hashtags = hashtag_feed.posts
       get :hashtag_feed
