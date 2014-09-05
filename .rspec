@@ -1,2 +1,14 @@
---color
---require spec_helper
+
+RSpec.describe RelatedHashtagsController do 
+  describe "get_hashtag_feed" do
+    it "should return related hashtag feed for given query" do
+
+  
+end
+
+## I wanna use this too....more comin'...
+## have_at_least(<n>).things
+
+##--color
+##--require spec_helper
+
