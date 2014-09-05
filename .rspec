@@ -21,8 +21,6 @@ RSpec.describe RelatedHashtagsController do
     
     
     
-  ## @hasher = @hasher.sort_by {|k,v| v}.reverse
-    
   
   end
   
