@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902005346) do
+ActiveRecord::Schema.define(version: 20140905022154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20140902005346) do
     t.datetime "updated_at"
     t.boolean  "is_spam",    default: false
   end
+
+  add_index "related_hashtags", ["name"], name: "index_related_hashtags_on_name", using: :btree
 
   create_table "searches", force: true do |t|
     t.string   "topic"
