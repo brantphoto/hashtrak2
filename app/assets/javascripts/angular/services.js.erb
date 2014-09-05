@@ -1,0 +1,7 @@
+relatedManager.factory('RelatedHashtag', ['$resource', function($resource){
+  var id = 758;
+  console.log("ID: " + id);
+	return $resource('/hashtag_feeds/' + id + '/related_hashtags.json',
+        {id: '@id'},
+		{update: {method: 'PATCH'}});
+}]);

@@ -1,5 +1,7 @@
-relatedManager.factory('RelatedHashtag', ['$resource', function($resource){
-	return $resource('/hashtag_feeds/758/related_hashtags.json',
+relatedManager.factory('RelatedHashtag', ['$resource', '$location',  function($resource, $location){
+  var og = $location.path();
+
+	return $resource(og + "related_hashtags.json",
 		{id: '@id'},
 		{update: {method: 'PATCH'}});
 }]);
