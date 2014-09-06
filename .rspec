@@ -2,13 +2,22 @@
 ##--color
 ##--require spec_helper
 
-RSpec.describe SearchesController do
-
-
+Rspec.describe SearchesController do
+  describe create do
+  context ‘when attributes are valid’ do
+      it ‘saves the search and redirects to the related hashtag feed’ do
+          user.should_receive(:hashtag_feed).and_return(true)
+          subject.should redirect_to(:hashtag_feed_related_hashtags_path)
+      end
+    
+  context ‘when attributes are not valid’ do
+      it ‘should raise an error’ do
+        {:search}.should raise_error(unprocessableEntity)
+      end
+  end
 end
 
-
-
+##1 more controller spec goes here
 
 RSpec.describe RelatedHashtagsController do 
   describe get_hashtag_feed do
