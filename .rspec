@@ -15,6 +15,19 @@ Rspec.describe SearchesController do
         {:search}.should raise_error(unprocessableEntity)
       end
   end
+  
+  describe recentposts do
+    describe datar do
+
+    
+
+
+end
+end
+
+
+  
+  
 end
 
 ##1 more controller spec goes here
