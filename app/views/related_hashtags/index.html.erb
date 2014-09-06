@@ -14,8 +14,9 @@
 </div>
 
 <div class="bnw">
-
-  <h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
+    <%= @hasher.count %> current hashtag related count <br>
+    <%= @top_hashfeed_counter %> top hashtag related count 
+<h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
    <%@hasher.each do |x| %>
      <%= x[0] %> <br> <%= x[1] %> <br>
    <% end %>

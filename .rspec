@@ -1,2 +1,64 @@
---color
---require spec_helper
+
+##--color
+##--require spec_helper
+
+##MODEL SPECS
+
+
+
+##CONTROLLER SPECS
+
+Rspec.describe SearchesController do
+  describe create do
+  context ‘when attributes are valid’ do
+      it ‘saves the search and redirects to the related hashtag feed’ do
+          user.should_receive(:hashtag_feed).and_return(true)
+          subject.should redirect_to(:hashtag_feed_related_hashtags_path)
+      end
+      end
+    
+  context ‘when attributes are not valid’ do
+      it ‘should raise an error’ do
+        {:search}.should raise_error(unprocessableEntity)
+      end
+  end
+  
+describe recentposts do
+    describe datar do
+      it should return correct JSON data from Instagram API
+      expect(datar).to exist
+      expect(datar).to include('tags', 'id', 'location', 'iguser', 'igusername')
+    end
+  end
+
+end
+
+RSpec.describe RelatedHashtagsController do 
+  describe get_hashtag_feed do
+    it "should return @related_hashtags" do
+      related_hashtags = hashtag_feed.posts
+      get :hashtag_feed
+      expect(assigns:related_hashtags)).to eq[hasher]
+  end
+    
+  describe hasher do
+    it { should have_at_least(1).items }
+    it { should_not include(nil) }
+    it { should_not include(@hashtag_feed.name) }
+  end
+  
+ describe hashtag_feed do
+    context "with id parameters" do
+    { get :hashtag_feed_id => @hashtag_feed }
+    it "returns of hash of hashtag_feed with id params"
+    expect (json['hashtag_feed'].to have_key('hashtag_feed_id'))
+  end
+  
+end
+  
+  
+  
+  
+  
+  
+
