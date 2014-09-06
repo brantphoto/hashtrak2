@@ -21,3 +21,10 @@
    <% end %>
 </div> 
 </div>
+
+<h2> Hashtag Size over Time </h2>
+<% @hashtag_feed.hash_sizes.each do |y| %>
+    <%= y.size %> 
+    <br />
+    <%= y.created_at %>
+<% end %>

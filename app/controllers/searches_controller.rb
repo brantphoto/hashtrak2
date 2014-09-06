@@ -45,14 +45,14 @@ class SearchesController < ApplicationController
 
     presponse = HTTParty.get("https://api.instagram.com/v1/tags/#{hashfeed}?client_id=e7e5e08b2c444bf5a395ff0d1e5427be")
     parsedobj1 = JSON.parse(presponse.body)
-    sizer = parsedobj1['data']['media_count']
+    @sizer = parsedobj1['data']['media_count']
     namer = parsedobj1['data']['name']
     if HashtagFeed.exists?(:name => namer)
       @y = HashtagFeed.where(:name => namer).first
-      HashSize.create(size:sizer, hashtag_feed: @y)
+      HashSize.create(size:@sizer, hashtag_feed: @y)
     else 
       @y = HashtagFeed.create(name: namer)
-      HashSize.create(size: sizer, hashtag_feed: @y)
+      HashSize.create(size: @sizer, hashtag_feed: @y)
     end
 
     response = HTTParty.get("https://api.instagram.com/v1/tags/#{hashfeed}/media/recent?client_id=e7e5e08b2c444bf5a395ff0d1e5427be")
