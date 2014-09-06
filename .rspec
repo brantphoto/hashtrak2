@@ -25,12 +25,9 @@ Rspec.describe SearchesController do
 end
 end
 
-
-  
   
 end
 
-##1 more controller spec goes here
 
 RSpec.describe RelatedHashtagsController do 
   describe get_hashtag_feed do
