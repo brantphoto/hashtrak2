@@ -2,6 +2,13 @@
 ##--color
 ##--require spec_helper
 
+RSpec.describe SearchesController do
+
+
+end
+
+
+
 
 RSpec.describe RelatedHashtagsController do 
   describe get_hashtag_feed do
