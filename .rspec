@@ -2,12 +2,19 @@
 ##--color
 ##--require spec_helper
 
+##MODEL SPECS
+
+
+
+##CONTROLLER SPECS
+
 Rspec.describe SearchesController do
   describe create do
   context ‘when attributes are valid’ do
       it ‘saves the search and redirects to the related hashtag feed’ do
           user.should_receive(:hashtag_feed).and_return(true)
           subject.should redirect_to(:hashtag_feed_related_hashtags_path)
+      end
       end
     
   context ‘when attributes are not valid’ do
@@ -16,18 +23,15 @@ Rspec.describe SearchesController do
       end
   end
   
-  describe recentposts do
+describe recentposts do
     describe datar do
-
-    
-
+      it should return correct JSON data from Instagram API
+      expect(datar).to exist
+      expect(datar).to include('tags', 'id', 'location', 'iguser', 'igusername')
+    end
+  end
 
 end
-end
-
-  
-end
-
 
 RSpec.describe RelatedHashtagsController do 
   describe get_hashtag_feed do
