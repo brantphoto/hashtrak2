@@ -105,3 +105,32 @@ p {
   line-height: 1.72222;
   margin: 0 0 15px;
 }
+
+/* Screens Settings */
+#screen1 {  
+  background: #B6D8C0;
+}
+
+#screen1 p {
+  padding-top: 200px;
+}
+
+#screen2 {
+  background: #ffffff;
+}
+
+#screen3 {
+  background: #B6D8C0;
+}
+
+@media only screen and (max-width: 520px) {
+
+  nav li {
+    padding: 24px 4px;
+  }
+
+  nav li a {
+    font-size: 14px;
+  }
+
+}
