@@ -1,9 +1,17 @@
 <div class="container">
-	<%= link_to 'Back', root_path %>
+  <%= link_to 'Back', root_path %>
 <div ng-app="relatedManager">
   <div ng-controller="RelatedCtrl as r">
-    {{ r.test }}
-  <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas>
+
+
+
+  <canvas barchart options="options" data="chart" width="800" height="400"></canvas>
+  <br />
+
+  <canvas linechart options="options" data="chart" width="800" height="400"></canvas>
+    <br />
+
+  <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
 
 <!--   <li ng-repeat="a in tags">
     {{ a[0] }} {{a[1]}}
@@ -14,18 +22,31 @@
 </div>
 
 <div class="bnw">
+<<<<<<< HEAD
     <%= @hasher.count %> current hashtag related count <br>
     <%= @top_hashfeed_posts.all %> top hashtag related count 
 <h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
    <%@hasher.each do |x| %>
      <%= x[0] %> <br> <%= x[1] %> <br>
+=======
+
+  <h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
+   <%@hasher.first(10).each do |x| %>
+   <ul>
+     <li><%= x[0] %> shows up 
+      <%= x[1] %> times</li> 
+    </ul>
+>>>>>>> ebfd87ba28ed758a36f4723b94da1f97c178eae2
    <% end %>
 </div> 
-</div>
 
 <h2> Hashtag Size over Time </h2>
 <% @hashtag_feed.hash_sizes.each do |y| %>
-    <%= y.size %> 
-    <br />
-    <%= y.created_at %>
+<ul>
+  <li>
+The total number of posts containing the hashtag "<%=@hashtag_feed.name%>" was <%=number_with_delimiter(y.size) %> during the time of <%= y.created_at %>
 <% end %>
+<br>
+<%= @top_hashfeed_counter %>meow
+
+</div>
