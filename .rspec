@@ -4,6 +4,16 @@
 
 ##MODEL SPECS
 
+describe Instauser do
+  
+  it { should have a valid userid } do
+  InstaUser.new(:userid).should be_valid
+  end
+
+  it { should have_many(:posts) }
+  end
+
+end
 
 
 ##CONTROLLER SPECS
