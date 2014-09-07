@@ -1,10 +1,22 @@
 <div class="container">
-	<%= link_to 'Back', root_path %>
+  <%= link_to 'Back', root_path %>
 <div ng-app="relatedManager">
   <div ng-controller="RelatedCtrl as r">
     {{ r.test }}
-  <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas>
+  <div ng-init="greeting='Hello'; person='World'">
+    {{greeting}} {{person}}!
+  </div>
 
+
+  <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
+
+  <canvas barchart options="options" data="chart" width="800" height="400"></canvas>
+  <br />
+
+  <canvas linechart options="options" data="chart" width="800" height="400"></canvas>
+    <br />
+
+  {{ x1 }}
 <!--   <li ng-repeat="a in tags">
     {{ a[0] }} {{a[1]}}
   </li> -->
@@ -14,18 +26,18 @@
 </div>
 
 <div class="bnw">
-    <%= @hasher.count %> current hashtag related count <br>
-    <%= @top_hashfeed_counter %> top hashtag related count 
-<h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
+
+  <h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
    <%@hasher.each do |x| %>
      <%= x[0] %> <br> <%= x[1] %> <br>
    <% end %>
 </div> 
-</div>
 
 <h2> Hashtag Size over Time </h2>
 <% @hashtag_feed.hash_sizes.each do |y| %>
-    <%= y.size %> 
-    <br />
-    <%= y.created_at %>
+<%= y.size %> 
+<br />
+<%= y.created_at %>
 <% end %>
+
+</div>
