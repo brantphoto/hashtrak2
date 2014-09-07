@@ -40,6 +40,23 @@ describe Post do
   it { should have_many(:related_hastags).through(:related_hashtag_posts) }
 end  
 
+describe RelatedHashtag do
+  it { should have_many :related_hashtag_posts }
+  it { should have_many(:posts).through(:related_hashtag_posts) }
+  it { should validates_uniqueness_of(:name) }
+  it { should validate_presence_of(:name) }
+end
+
+describe RelatedHashtagPost do
+  it { should belong_to :post }
+  it { should belong_to :related_hashtag }
+end
+
+describe Search do
+  it { should belong_to :hashtag_feed }
+
+end
+
 
 
 
