@@ -5,7 +5,6 @@
 ##MODEL SPECS
 
 describe Instauser do
-  
   it { should have a valid userid } do
   InstaUser.new(:userid).should be_valid
   end
@@ -25,6 +24,23 @@ end
 describe HashSize do
   it { should belong_to :hashtag_feed}
 end
+
+describe HashtagFeed do
+    it { should belong_to :category }
+    it { should have_many :hash_sizes }
+    it { should have_many :posts }
+    it { should have_many :searches }
+    it { should have_many(:related_hastags).through(:posts)}
+  end
+
+describe Post do
+  it { should belong_to :insta_user }
+  it { should belong_to :hashtag_feed }
+  it { should have_many :related_hashtag_posts }
+  it { should have_many(:related_hastags).through(:related_hashtag_posts) }
+end  
+
+
 
 
 
