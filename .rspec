@@ -15,6 +15,18 @@ describe Instauser do
 
 end
 
+describe Category do
+
+    it { should have_many(:hashtag_feeds } do
+    Category.new(:name).should be_valid
+    end
+end
+
+describe HashSize do
+  it { should belong_to :hashtag_feed}
+end
+
+
 
 ##CONTROLLER SPECS
 
