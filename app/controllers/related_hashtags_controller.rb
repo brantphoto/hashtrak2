@@ -23,11 +23,11 @@ class RelatedHashtagsController < ApplicationController
     end 
     
     @top_hashfeed_posts = @top_hashfeed.posts
-    @top_hashfeed_counter = 0
+    @top_hashfeed_hash = 100 
     @top_hashfeed_posts.each do |h|
       @top_related_hashtags = h.related_hashtags.where(is_spam:false).all
       @top_related_hashtags.each do |c|
-        @top_hashfeed_counter = @top_hashfeed_counter + 1
+        @top_hashfeed_hash[c.name] = c.name 
       end
     end
 
