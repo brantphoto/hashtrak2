@@ -19,25 +19,23 @@
 
         <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
 
-        <nav class="navbar-default" role="navigation">
-         <div class="container">
-          <div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Search Again</a>
-        </div>
-
-      </div>
-    </nav> 
+        
 
   </section>
 
+
   <section id="screen2">
    
+      <nav>
+    <ul>
+      <li><a href="/">Search Again</a></li>
+      <li><a href="screen1">About</a></li>
+      <li><a href="screen2">Services</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
       <h2> Hashtag Size over Time </h2>
       <% @hashtag_feed.hash_sizes.first(10).each do |y| %>
       <li>
@@ -50,30 +48,30 @@
 
   <section id="screen3">
       <h2> The category for <%=@hashtag_feed.name%> is </h2>
-      <%= @top_hashfeed_counter %>
+      <br><br>
+      <%= @top_hashfeed_counter %> <br>HASHFEED COUNTER NO WORKY
 
       <canvas barchart options="options" data="chart" width="800" height="400"></canvas>
 
 
   </section>
     </center>
-    
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-  <script>
-    $(document).ready(function(){
+<script>
+   $(document).ready(function(){
      $(window).bind('scroll', function() {
-       var navHeight = $( window ).height() - 70;
+     var navHeight = $( window ).height() - 70;
        if ($(window).scrollTop() > navHeight) {
          $('nav').addClass('fixed');
        }
        else {
          $('nav').removeClass('fixed');
        }
-     });
-   });
-  </script>
+    });
+  });
+</script>
 
   </div>
 </div>
