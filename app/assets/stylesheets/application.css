@@ -13,22 +13,28 @@
  */
 @import 'bootstrap';
 
-.maincontent {
-
-     position:absolute;
-     top:30%;
-     left:20%;
+.intro-header {
+    background-color: #B6D8C0;
+    padding-bottom: 300px;
+    padding-top: 190px;
+    height: 100%;
 }
+
 .hashtrek {
     text-align: center;
     font-size: 100px;
+    margin-bottom: -27px;
+    color: #FE935B;
+    text-shadow: px 2px #AA8E44;
 }
 .gimmicks {
     text-align: center;
     font-size: 50px;
 }
 .searchbar {
-    padding-top: 50px;
+    width: 70%;
+    padding-top: 20%;
+    margin: 0 auto;
 }
 
 .form-control {
@@ -48,236 +54,54 @@
     z-index:10;
 }
 
-
-header {
-    height:280px;
+body {
+    height: 100%;
+    width: 100%;
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.72222;
+      color: #34495e;
 }
-
-
-
-#DIV_1 {
-    box-sizing: border-box;
-    color: rgb(12, 23, 30);
-    height: 146px;
-    position: relative;
-    text-align: center;
-    text-transform: capitalize;
-    width: 940px;
-    perspective-origin: 470px 73px;
-    transform-origin: 470px 73px;
-    border: 0px none rgb(12, 23, 30);
-    font: normal normal normal 14px/22px Lato, sans-serif;
-    margin: 0px 135px;
-    outline: rgb(12, 23, 30) none 0px;
-    overflow: hidden;
-    padding: 24px 0px;
-}/*#DIV_1*/
-
-#DIV_2 {
-    box-sizing: border-box;
-    color: rgb(12, 23, 30);
-    height: 98px;
-    text-align: center;
-    text-transform: capitalize;
-    width: 960px;
-    perspective-origin: 480px 49px;
-    transform-origin: 480px 49px;
-    border: 0px none rgb(12, 23, 30);
-    font: normal normal normal 14px/22px Lato, sans-serif;
-    margin: 0px 0px 0px -20px;
-    outline: rgb(12, 23, 30) none 0px;
-}/*#DIV_2*/
-
-#DIV_2:after {
-    clear: both;
-    color: rgb(12, 23, 30);
-    display: table;
-    text-align: center;
-    text-transform: capitalize;
-    width: 1px;
-    perspective-origin: 0.5px 0px;
-    transform-origin: 0.5px 0px;
-    content: '';
-    border: 0px none rgb(12, 23, 30);
-    font: normal normal normal 14px/0px Lato, sans-serif;
-    outline: rgb(12, 23, 30) none 0px;
-}/*#DIV_2:after*/
-
-#DIV_2:before {
-    color: rgb(12, 23, 30);
-    display: table;
-    text-align: center;
-    text-transform: capitalize;
-    width: 1px;
-    perspective-origin: 0.5px 0px;
-    transform-origin: 0.5px 0px;
-    content: '';
-    border: 0px none rgb(12, 23, 30);
-    font: normal normal normal 14px/0px Lato, sans-serif;
-    outline: rgb(12, 23, 30) none 0px;
-}/*#DIV_2:before*/
-
-#DIV_3, #DIV_7, #DIV_11, #DIV_15 {
-    box-sizing: border-box;
-    color: rgb(12, 23, 30);
-    float: left;
-    height: 98px;
-    min-height: 1px;
-    opacity: 0.999999940395355;
-    text-align: center;
-    text-transform: capitalize;
-    width: 220px;
-    z-index: 0;
-    perspective-origin: 110px 49px;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-    transform-origin: 110px 49px;
-    border: 0px none rgb(12, 23, 30);
-    font: normal normal normal 14px/22px Lato, sans-serif;
-    margin: 0px 0px 0px 20px;
-    outline: rgb(12, 23, 30) none 0px;
-}/*#DIV_3, #DIV_7, #DIV_11, #DIV_15*/
-
-#A_4 {
-    box-sizing: border-box;
-    color: rgb(253, 114, 125);
-    text-align: center;
-    text-decoration: none;
-    text-transform: capitalize;
-    border: 0px none rgb(253, 114, 125);
-    font: normal normal normal 14px/22px Lato, sans-serif;
-    outline: rgb(253, 114, 125) none 0px;
-    transition: all 0.2s ease-out 0s;
-}/*#A_4*/
-
-#SPAN_5 {
-    box-sizing: border-box;
-    color: rgb(253, 114, 125);
-    text-align: center;
-    text-transform: capitalize;
-    vertical-align: top;
-    border: 0px none rgb(253, 114, 125);
-    font: normal normal normal 70px/70px Lato, sans-serif;
-    outline: rgb(253, 114, 125) none 0px;
-    transition: all 0.1s ease 0s;
-}/*#SPAN_5*/
-
-#SPAN_5:before {
-    color: rgb(253, 114, 125);
-    speak: none;
-    text-align: center;
-    content: 'R';
-    border: 0px none rgb(253, 114, 125);
-    font: normal normal normal 70px/70px streamline-icons;
-    outline: rgb(253, 114, 125) none 0px;
-}/*#SPAN_5:before*/
-
-#P_6 {
-    box-sizing: border-box;
-    clear: both;
-    color: rgb(253, 114, 125);
-    height: 22px;
-    text-align: center;
-    text-transform: capitalize;
-    width: 220px;
-    perspective-origin: 110px 11px;
-    transform-origin: 110px 11px;
-    border: 0px none rgb(253, 114, 125);
-    font: normal normal normal 14px/22px Lato, sans-serif;
-    margin: 0px;
-    outline: rgb(253, 114, 125) none 0px;
-}/*#P_6*/
-
-#A_8, #A_12, #A_16 {
-    box-sizing: border-box;
-    color: rgb(99, 99, 99);
-    text-align: center;
-    text-decoration: none;
-    text-transform: capitalize;
-    border: 0px none rgb(99, 99, 99);
-    font: normal normal normal 14px/22px Lato, sans-serif;
-    outline: rgb(99, 99, 99) none 0px;
-    transition: all 0.2s ease-out 0s;
-}/*#A_8, #A_12, #A_16*/
-
-#SPAN_9 {
-    box-sizing: border-box;
-    color: rgb(99, 99, 99);
-    text-align: center;
-    text-transform: capitalize;
-    vertical-align: top;
-    border: 0px none rgb(99, 99, 99);
-    font: normal normal normal 70px/70px Lato, sans-serif;
-    outline: rgb(99, 99, 99) none 0px;
-    transition: all 0.1s ease 0s;
-}/*#SPAN_9*/
-
-#SPAN_9:before {
-    color: rgb(99, 99, 99);
-    speak: none;
-    text-align: center;
-    content: url(http://cdn.flaticon.com/png/64/38807.png);
-    border: 0px none rgb(99, 99, 99);
-    font: normal normal normal 70px/70px streamline-icons;
-    outline: rgb(99, 99, 99) none 0px;
-}/*#SPAN_9:before*/
-
-#P_10, #P_14, #P_18 {
-    box-sizing: border-box;
-    clear: both;
-    color: rgb(99, 99, 99);
-    height: 22px;
-    text-align: center;
-    text-transform: capitalize;
-    width: 220px;
-    perspective-origin: 110px 11px;
-    transform-origin: 110px 11px;
-    border: 0px none rgb(99, 99, 99);
-    font: normal normal normal 14px/22px Lato, sans-serif;
-    margin: 0px;
-    outline: rgb(99, 99, 99) none 0px;
-}/*#P_10, #P_14, #P_18*/
-
-#SPAN_13 {
-    box-sizing: border-box;
-    color: rgb(99, 99, 99);
-    text-align: center;
-    text-transform: capitalize;
-    vertical-align: top;
-    border: 0px none rgb(99, 99, 99);
-    font: normal normal normal 70px/70px Lato, sans-serif;
-    outline: rgb(99, 99, 99) none 0px;
-    transition: all 0.1s ease 0s;
-}/*#SPAN_13*/
-
-#SPAN_13:before {
-    color: rgb(99, 99, 99);
-    speak: none;
-    text-align: center;
-    content: url(https://cdn4.iconfinder.com/data/icons/rcons-user/32/user_group_users_accounts_contacts-64.png);
-    border: 0px none rgb(99, 99, 99);
-    font: normal normal normal 70px/70px streamline-icons;
-    outline: rgb(99, 99, 99) none 0px;
-}/*#SPAN_13:before*/
-
-#SPAN_17 {
-    box-sizing: border-box;
-    color: rgb(99, 99, 99);
-    text-align: center;
-    text-transform: capitalize;
-    vertical-align: top;
-    border: 0px none rgb(99, 99, 99);
-    font: normal normal normal 70px/70px Lato, sans-serif;
-    outline: rgb(99, 99, 99) none 0px;
-    transition: all 0.1s ease 0s;
-}/*#SPAN_17*/
-
-#SPAN_17:before {
-    color: rgb(99, 99, 99);
-    speak: none;
-    text-align: center;
-    content: 'M';
-    border: 0px none rgb(99, 99, 99);
-    font: normal normal normal 70px/70px streamline-icons;
-    outline: rgb(99, 99, 99) none 0px;
-}/*#SPAN_17:before*/
-
+.devs {
+    padding-top: 70px;
+    padding-bottom: 200px;
+}
+.col-sm-4 {
+    padding-top: 300px;
+}
+h1,
+h2,
+h3 {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+h4,
+h5,
+h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+h6 {
+  font-weight: normal;
+}
+h1,
+.h1 {
+  font-size: 80px;
+}
+h2,
+.h2 {
+  font-size: 63px;
+}
+h3,
+.h3 {
+  font-size: 30px;
+}
+h4,
+.h4 {
+  font-size: 20px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.72222;
+  margin: 0 0 15px;
+}
