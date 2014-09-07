@@ -16,7 +16,7 @@ describe Category do
 end
 
 describe HashSize do
-  it { should belong_to :hashtag_feed}
+  it { should belong_to :hashtag_feed }
 end
 
 describe HashtagFeed do
@@ -24,7 +24,7 @@ describe HashtagFeed do
     it { should have_many :hash_sizes }
     it { should have_many :posts }
     it { should have_many :searches }
-    it { should have_many(:related_hastags).through(:posts)}
+    it { should have_many(:related_hastags).through(:posts) }
   end
 
 describe Post do
