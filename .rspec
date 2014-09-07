@@ -4,21 +4,15 @@
 
 ##MODEL SPECS
 
-describe Instauser do
-  it { should have a valid userid } do
-  InstaUser.new(:userid).should be_valid
-  end
-
-  it { should have_many(:posts) }
-  end
-
+describe InstaUser do
+  it { should have_many :posts }
+  it { should validates_uniqueness_of(:userid) }
 end
 
 describe Category do
-
-    it { should have_many(:hashtag_feeds } do
-    Category.new(:name).should be_valid
-    end
+  it { should have_many :hashtag_feeds }
+  it { should validates_uniqueness_of(:name) }
+  it { should validate_presence_of(:name) }
 end
 
 describe HashSize do
@@ -54,18 +48,14 @@ end
 
 describe Search do
   it { should belong_to :hashtag_feed }
-
 end
-
-
-
 
 
 ##CONTROLLER SPECS
 
 Rspec.describe SearchesController do
   describe create do
-  context ‘when attributes are valid’ do
+    context ‘when attributes are valid’ do
       it ‘saves the search and redirects to the related hashtag feed’ do
           user.should_receive(:hashtag_feed).and_return(true)
           subject.should redirect_to(:hashtag_feed_related_hashtags_path)
@@ -76,7 +66,7 @@ Rspec.describe SearchesController do
       it ‘should raise an error’ do
         {:search}.should raise_error(unprocessableEntity)
       end
-  end
+      end
   
 describe recentposts do
     describe datar do
@@ -84,7 +74,7 @@ describe recentposts do
       expect(datar).to exist
       expect(datar).to include('tags', 'id', 'location', 'iguser', 'igusername')
     end
-  end
+    end
 
 end
 
@@ -94,6 +84,8 @@ RSpec.describe RelatedHashtagsController do
       related_hashtags = hashtag_feed.posts
       get :hashtag_feed
       expect(assigns:related_hashtags)).to eq[hasher]
+  end
+  end
   end
     
   describe hasher do
