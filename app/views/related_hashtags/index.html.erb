@@ -28,8 +28,11 @@
 <div class="bnw">
 
   <h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
-   <%@hasher.each do |x| %>
-     <%= x[0] %> <br> <%= x[1] %> <br>
+   <%@hasher.first(10).each do |x| %>
+   <ul>
+     <li><%= x[0] %> 
+      <%= x[1] %></li> 
+    </ul>
    <% end %>
 </div> 
 
