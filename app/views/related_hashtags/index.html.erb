@@ -1,26 +1,29 @@
-<div class="container">
-  <%= link_to 'Back', root_path %>
-<div ng-app="relatedManager">
-  <div ng-controller="RelatedCtrl as r">
+<div class="container1">
+  <div ng-app="relatedManager">
+    <div ng-controller="RelatedCtrl as r">
 
 
+      <center>
+      <section id="screen1">
 
-  <canvas barchart options="options" data="chart" width="800" height="400"></canvas>
-  <br />
+        <div class="bnw">
 
-  <canvas linechart options="options" data="chart" width="800" height="400"></canvas>
-    <br />
+          <h2> Hashtags most associated with <%=@hashtag_feed.name %> <br></h2>
+          <%@hasher.first(10).each do |x| %>
+          <ul>
+           <li><%= x[0] %> shows up 
+            <%= x[1] %> times</li> 
+          </ul>
+          <% end %>
+        </div> 
 
-  <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
+        <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
 
-<!--   <li ng-repeat="a in tags">
-    {{ a[0] }} {{a[1]}}
-  </li> -->
-    </div>
+        
 
-  </div>
-</div>
+  </section>
 
+<<<<<<< HEAD
 <div class="bnw">
 <<<<<<< HEAD
     <%= @hasher.count %> current hashtag related count <br>
@@ -29,13 +32,20 @@
    <%@hasher.each do |x| %>
      <%= x[0] %> <br> <%= x[1] %> <br>
 =======
+=======
+>>>>>>> 88270c2be9f38630c701909e70b77bcfd96f389c
 
-  <h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
-   <%@hasher.first(10).each do |x| %>
-   <ul>
-     <li><%= x[0] %> shows up 
-      <%= x[1] %> times</li> 
+  <section id="screen2">
+   
+      <nav>
+    <ul>
+      <li><a href="/">Search Again</a></li>
+      <li><a href="screen1">About</a></li>
+      <li><a href="screen2">Services</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
+<<<<<<< HEAD
 >>>>>>> ebfd87ba28ed758a36f4723b94da1f97c178eae2
    <% end %>
 </div> 
@@ -50,3 +60,46 @@ The total number of posts containing the hashtag "<%=@hashtag_feed.name%>" was <
 <%= @top_hashfeed_counter %>meow
 
 </div>
+=======
+  </nav>
+
+      <h2> Hashtag Size over Time </h2>
+      <% @hashtag_feed.hash_sizes.first(10).each do |y| %>
+      <li>
+        The total number of posts containing the hashtag "<%=@hashtag_feed.name%>" was <%=number_with_delimiter(y.size) %> during the time of <%= y.created_at %>
+        <% end %>
+
+        <canvas linechart options="options" data="chart" width="800" height="400"></canvas>
+  </section>
+
+
+  <section id="screen3">
+      <h2> The category for <%=@hashtag_feed.name%> is </h2>
+      <br><br>
+      <%= @top_hashfeed_counter %> <br>HASHFEED COUNTER NO WORKY
+
+      <canvas barchart options="options" data="chart" width="800" height="400"></canvas>
+
+
+  </section>
+    </center>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+   $(document).ready(function(){
+     $(window).bind('scroll', function() {
+     var navHeight = $( window ).height() - 70;
+       if ($(window).scrollTop() > navHeight) {
+         $('nav').addClass('fixed');
+       }
+       else {
+         $('nav').removeClass('fixed');
+       }
+    });
+  });
+</script>
+
+  </div>
+</div>
+>>>>>>> 88270c2be9f38630c701909e70b77bcfd96f389c
