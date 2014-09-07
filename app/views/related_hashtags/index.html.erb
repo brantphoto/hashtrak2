@@ -2,13 +2,8 @@
   <%= link_to 'Back', root_path %>
 <div ng-app="relatedManager">
   <div ng-controller="RelatedCtrl as r">
-    {{ r.test }}
-  <div ng-init="greeting='Hello'; person='World'">
-    {{greeting}} {{person}}!
-  </div>
 
 
-  <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
 
   <canvas barchart options="options" data="chart" width="800" height="400"></canvas>
   <br />
@@ -16,7 +11,8 @@
   <canvas linechart options="options" data="chart" width="800" height="400"></canvas>
     <br />
 
-  {{ x1 }}
+  <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
+
 <!--   <li ng-repeat="a in tags">
     {{ a[0] }} {{a[1]}}
   </li> -->
@@ -42,5 +38,7 @@
   <li>
 The total number of posts containing the hashtag "<%=@hashtag_feed.name%>" was <%=number_with_delimiter(y.size) %> during the time of <%= y.created_at %>
 <% end %>
+<br>
+<%= @top_hashfeed_counter %>meow
 
 </div>
