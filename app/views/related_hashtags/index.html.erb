@@ -4,83 +4,81 @@
 
 
       <center>
-        <header>
-          <section id="screen1">
+        <section id="screen1">
 
-            <div class="bnw">
+          <div class="bnw">
 
-              <h2> Hashtags most associated with <%=@hashtag_feed.name %> <br></h2>
-              <%@hasher.first(10).each do |x| %>
-              <ul>
-               <li><%= x[0] %> shows up 
-                <%= x[1] %> times</li> 
+            <h2> Hashtags most associated with <%=@hashtag_feed.name %> <br></h2>
+            <%@hasher.first(10).each do |x| %>
+            <ul>
+             <li><%= x[0] %> shows up 
+              <%= x[1] %> times</li> 
+            </ul>
+            <% end %>
+          </div> 
+
+          <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
+
+
+
+        </section>
+
+        <section id="screen2">
+
+         <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav nav-justified">
+                <li><a href="/../../#section2">Hashtag Relations</a></li>
+                <li><a href="#section3">Size Over Time</a></li>
+                <li class="active"><a href="/"><strong>Search Again</strong></a></li>
+                <li><a href="#section4">Category</a></li>
+                <li><a href="#section5">What's Trending</a></li>
               </ul>
-              <% end %>
-            </div> 
-
-            <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
-
+            </div><!--/.nav-collapse -->
+          </div><!--/.container -->
+        </div><!--/.navbar -->
 
 
-          </section>
-        </header>
+        <!-- </div>  -->
 
-          <section id="screen2">
+        <h2> Hashtag Size over Time </h2>
+        <% @hashtag_feed.hash_sizes.each do |y| %>
+        <ul>
+          <li>
+            The total number of posts containing the hashtag "<%=@hashtag_feed.name%>" was <%=number_with_delimiter(y.size) %> during the time of <%= y.created_at %>
+            <% end %>
+            <br>
+            <%= @top_hashfeed_counter %>meow
 
-           <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
-            <div class="container">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-              </div>
-              <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav nav-justified">
-                  <li><a href="/../../#section2">Hashtag Relations</a></li>
-                  <li><a href="#section3">Size Over Time</a></li>
-                  <li class="active"><a href="/"><strong>Search Again</strong></a></li>
-                  <li><a href="#section4">Category</a></li>
-                  <li><a href="#section5">What's Trending</a></li>
-                </ul>
-              </div><!--/.nav-collapse -->
-            </div><!--/.container -->
-          </div><!--/.navbar -->
-
-
-      <!-- </div>  -->
-
-      <h2> Hashtag Size over Time </h2>
-      <% @hashtag_feed.hash_sizes.each do |y| %>
-      <ul>
-        <li>
-          The total number of posts containing the hashtag "<%=@hashtag_feed.name%>" was <%=number_with_delimiter(y.size) %> during the time of <%= y.created_at %>
-          <% end %>
-          <br>
-          <%= @top_hashfeed_counter %>meow
-
-        </div>
-        =======
+          </div>
+          =======
 
 
 
 
-        <canvas linechart options="options" data="chart" width="800" height="400"></canvas>
-      </section>
+          <canvas linechart options="options" data="chart" width="800" height="400"></canvas>
+        </section>
 
 
-      <section id="screen3">
-        <h2> The category for <%=@hashtag_feed.name%> is </h2>
-        <br><br>
-        <%= @top_hashfeed_counter %> <br>HASHFEED COUNTER NO WORKY
+        <section id="screen3">
+          <h2> The category for <%=@hashtag_feed.name%> is </h2>
+          <br><br>
+          <%= @top_hashfeed_counter %> <br>HASHFEED COUNTER NO WORKY
 
-        <canvas barchart options="options" data="chart" width="800" height="400"></canvas>
+          <canvas barchart options="options" data="chart" width="800" height="400"></canvas>
 
 
-      </section>
-    </center>
+        </section>
+      </center>
 
+    </div>
   </div>
-</div>
 
