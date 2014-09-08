@@ -4,7 +4,7 @@
       <center>
         <section id="screen1">
 
-          <div class="bnw">
+          
               <h1> Hashtags most associated with
               <br> 
                 <strong> #<%=@hashtag_feed.name %> </strong>
@@ -15,17 +15,19 @@
                 <strong> #<%=@category.name%> </strong>
               </h2>
               <h2> which has the<br>
-                definition<br>
-                <strong>#below</strong>
+               following<br>
+                <strong>#definition</strong>
               </h2>
-
+              <h2> <strong>#<%= @category.name %>: </strong>
+               <%= @category_def %>
+              </h2>
             <%@hasher.first(10).each do |x| %>
             <ul>
              <li><%= x[0] %> shows up 
               <%= x[1] %> times</li> 
             </ul>
             <% end %>
-          </div> 
+         
 
           <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="300"></canvas><br />
 

@@ -22,6 +22,8 @@ class RelatedHashtagsController < ApplicationController
     @hashtag_feed.update(category:whobigger(@hashtag_feed, @top_hashfeed))
     if @hashtag_feed.save
       @category = @hashtag_feed.category
+      wordnik_json = Wordnik.word.get_definitions(@category.name)
+      @category_def = wordnik_json.first['text']
     end
     respond_with @hasher
   end
@@ -57,6 +59,7 @@ class RelatedHashtagsController < ApplicationController
       return Category.create(name:hashfeed.name)
     end
   end
+
 
   def new
   end

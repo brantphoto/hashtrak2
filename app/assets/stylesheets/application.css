@@ -13,8 +13,10 @@
  */
 @import 'bootstrap';
 
+$color1: #F0EAC8;
+
 .intro-header {
-    background-color:rgb(180,5,28);
+    background-color: darken($color1, 30%);
     padding-bottom: 300px;
     padding-top: 190px;
     height: 100%;
