@@ -14,24 +14,48 @@ class RelatedHashtagsController < ApplicationController
     @hasher = @hasher.sort_by {|k,v| v}.reverse
     @hasher.delete_if {|key, value| key == @hashtag_feed.name }
     @hash_namer = @hasher[0][0]
-    @putput = HashtagFeed.where(:name => @hash_namer).first
-    if @putput != nil 
-      @top_hashfeed = @putput
+    if HashtagFeed.exists?(:name => @hash_namer)
+      @top_hashfeed = HashtagFeed.where(:name => @hash_namer).first
     else 
       @top_hashfeed = HashtagFeed.create(name:@hash_namer)
-    end 
-    
-    @top_hashfeed_posts = @top_hashfeed.posts
-    @top_hashfeed_hash = 100 
-    @top_hashfeed_posts.each do |h|
-      @top_related_hashtags = h.related_hashtags.where(is_spam:false).all
-      @top_related_hashtags.each do |c|
-        @top_hashfeed_hash[c.name] = c.name 
-      end
     end
-
-    
+    @hashtag_feed.update(category:whobigger(@hashtag_feed, @top_hashfeed))
+    if @hashtag_feed.save
+      @category = @hashtag_feed.category
+    end
     respond_with @hasher
+  end
+
+  def whobigger(hashtag_feed,top_hashfeed)
+    if top_hashfeed.hash_sizes.count == 0
+      x = find_top_hash_size(top_hashfeed)
+    else
+      x = top_hashfeed.hash_sizes.last.size
+    end
+    if x == nil
+      x = 0
+    end
+    if hashtag_feed.hash_sizes.last.size >= x
+      return get_category(hashtag_feed)
+    else
+      return get_category(top_hashfeed)
+    end
+  end
+ 
+  def find_top_hash_size(top_hashfeed)
+    presponse = HTTParty.get("https://api.instagram.com/v1/tags/#{top_hashfeed.name}?client_id=e7e5e08b2c444bf5a395ff0d1e5427be")
+    parsedobj1 = JSON.parse(presponse.body)
+    sizer = parsedobj1['data']['media_count']
+    x = HashSize.create(size:sizer, hashtag_feed:top_hashfeed)
+    return x.size
+  end
+
+  def get_category(hashfeed)
+    if Category.exists?(:name => hashfeed.name)
+      return Category.where(:name => hashfeed.name).first
+    else
+      return Category.create(name:hashfeed.name)
+    end
   end
 
   def new
@@ -54,6 +78,4 @@ class RelatedHashtagsController < ApplicationController
   def get_hashtag_feed
     @hashtag_feed = HashtagFeed.find(params[:hashtag_feed_id])
   end
-
- 
 end
