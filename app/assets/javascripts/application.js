@@ -20,7 +20,7 @@
 //= require_tree ../templates
 //= require_tree .
 //= require angular/angles
-
+//= require bootstrap
 
 
 /* affix the navbar after scroll below header */

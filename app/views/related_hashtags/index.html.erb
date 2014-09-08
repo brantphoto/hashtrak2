@@ -1,14 +1,24 @@
 <div class="container1">
   <div ng-app="relatedManager">
-    <div ng-controller="RelatedCtrl as r">
-
-
+      <div ng-controller="RelatedCtrl as r">
       <center>
         <section id="screen1">
 
           <div class="bnw">
+              <h1> Hashtags most associated with
+              <br> 
+                <strong> #<%=@hashtag_feed.name %> </strong>
+              <br>
+              </h1>
+              <h2> which has the categoty of
+              <br>
+                <strong> #<%=@category.name%> </strong>
+              </h2>
+              <h2> which has the<br>
+                definition<br>
+                <strong>#below</strong>
+              </h2>
 
-            <h2> Hashtags most associated with <%=@hashtag_feed.name %> <br></h2>
             <%@hasher.first(10).each do |x| %>
             <ul>
              <li><%= x[0] %> shows up 
