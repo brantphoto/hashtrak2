@@ -8,7 +8,8 @@
 
         <div class="bnw">
 
-          <h2> Hashtags most associated with <%=@hashtag_feed.name %> <br></h2>
+            <h2> Hashtags most associated with #<%=@hashtag_feed.name %> <br></h2>
+            <br> <h3> The category is <%=@category.name%> </h3>
           <%@hasher.first(10).each do |x| %>
           <ul>
            <li><%= x[0] %> shows up 
@@ -26,7 +27,7 @@
 <div class="bnw">
 
     <%= @hasher.count %> current hashtag related count <br>
-    <%= @top_hashfeed_posts.all %> top hashtag related count 
+     top hashtag related count 
 <h1> Results for Hashtag Feed:<%=@hashtag_feed.name %> <br></h1>
    <%@hasher.each do |x| %>
      <%= x[0] %> <br> <%= x[1] %> <br>
