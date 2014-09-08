@@ -4,13 +4,58 @@
 
 ##MODEL SPECS
 
+describe InstaUser do
+  it { should have_many :posts }
+  it { should validates_uniqueness_of(:userid) }
+end
+
+describe Category do
+  it { should have_many :hashtag_feeds }
+  it { should validates_uniqueness_of(:name) }
+  it { should validate_presence_of(:name) }
+end
+
+describe HashSize do
+  it { should belong_to :hashtag_feed }
+end
+
+describe HashtagFeed do
+    it { should belong_to :category }
+    it { should have_many :hash_sizes }
+    it { should have_many :posts }
+    it { should have_many :searches }
+    it { should have_many(:related_hastags).through(:posts) }
+  end
+
+describe Post do
+  it { should belong_to :insta_user }
+  it { should belong_to :hashtag_feed }
+  it { should have_many :related_hashtag_posts }
+  it { should have_many(:related_hastags).through(:related_hashtag_posts) }
+end  
+
+describe RelatedHashtag do
+  it { should have_many :related_hashtag_posts }
+  it { should have_many(:posts).through(:related_hashtag_posts) }
+  it { should validates_uniqueness_of(:name) }
+  it { should validate_presence_of(:name) }
+end
+
+describe RelatedHashtagPost do
+  it { should belong_to :post }
+  it { should belong_to :related_hashtag }
+end
+
+describe Search do
+  it { should belong_to :hashtag_feed }
+end
 
 
 ##CONTROLLER SPECS
 
 Rspec.describe SearchesController do
   describe create do
-  context ‘when attributes are valid’ do
+    context ‘when attributes are valid’ do
       it ‘saves the search and redirects to the related hashtag feed’ do
           user.should_receive(:hashtag_feed).and_return(true)
           subject.should redirect_to(:hashtag_feed_related_hashtags_path)
@@ -21,7 +66,7 @@ Rspec.describe SearchesController do
       it ‘should raise an error’ do
         {:search}.should raise_error(unprocessableEntity)
       end
-  end
+      end
   
 describe recentposts do
     describe datar do
@@ -29,7 +74,7 @@ describe recentposts do
       expect(datar).to exist
       expect(datar).to include('tags', 'id', 'location', 'iguser', 'igusername')
     end
-  end
+    end
 
 end
 
@@ -39,6 +84,8 @@ RSpec.describe RelatedHashtagsController do
       related_hashtags = hashtag_feed.posts
       get :hashtag_feed
       expect(assigns:related_hashtags)).to eq[hasher]
+  end
+  end
   end
     
   describe hasher do
