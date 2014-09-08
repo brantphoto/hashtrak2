@@ -4,14 +4,13 @@ class RelatedHashtagsController < ApplicationController
   
   def index
     @hasher = Hash.new
-    @posts = @hashtag_feed.posts
-
-    @posts.each do |y|
-      @related_hashtags = y.related_hashtags.where(is_spam:false).all
-      @related_hashtags.each do |z|
-        @hasher[z.name] = z.posts.where(hashtag_feed:@hashtag_feed).count
-      end
-    end
+    @hashtag_feed.posts.each do |y|
+       y.related_hashtags.each do |z|
+         if z.is_spam == false
+           @hasher[z.name] = z.posts.where(hashtag_feed:@hashtag_feed).count
+         end
+       end
+    end   
     @hasher = @hasher.sort_by {|k,v| v}.reverse
     @hasher.delete_if {|key, value| key == @hashtag_feed.name }
     @hash_namer = @hasher[0][0]

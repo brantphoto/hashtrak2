@@ -1,4 +1,6 @@
 Hashtrek::Application.routes.draw do
+  get "categories/index"
+  get "categories/show"
   get "searches/index"
   get "searches/new"
   get "searches/create"
@@ -20,13 +22,11 @@ Hashtrek::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'searches#new'
-  
+  resources :categories
   resources :searches
-
   resources :hashtag_feeds do
-    resources :related_hashtags, default: {format: :json}
+    resources :related_hashtags
   end 
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
