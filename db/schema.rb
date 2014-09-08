@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902005346) do
+ActiveRecord::Schema.define(version: 20140908022402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140902005346) do
   end
 
   add_index "hashtag_feeds", ["category_id"], name: "index_hashtag_feeds_on_category_id", using: :btree
+  add_index "hashtag_feeds", ["name"], name: "index_hashtag_feeds_on_name", using: :btree
 
   create_table "insta_users", force: true do |t|
     t.string   "username"
@@ -78,6 +79,9 @@ ActiveRecord::Schema.define(version: 20140902005346) do
     t.datetime "updated_at"
     t.boolean  "is_spam",    default: false
   end
+
+  add_index "related_hashtags", ["is_spam"], name: "index_related_hashtags_on_is_spam", using: :btree
+  add_index "related_hashtags", ["name"], name: "index_related_hashtags_on_name", using: :btree
 
   create_table "searches", force: true do |t|
     t.string   "topic"
