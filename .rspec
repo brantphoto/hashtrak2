@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ##--color
 ##--require spec_helper
@@ -109,3 +110,8 @@ end
   
   
 
+=======
+--color
+--warnings
+--require spec_helper
+>>>>>>> frontend
