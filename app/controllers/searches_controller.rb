@@ -9,10 +9,10 @@ class SearchesController < ApplicationController
     @related_hashtags = RelatedHashtag.all
   end
 
-# hello this is a secret message. 
   def create
     @search = Search.new(params.require(:search).permit(:topic, :hashtag_feed))
     if @search.save
+      @search.preptopic
       recentposts(@search.topic)
       @search.hashtag_feed = @y
       @search.save
