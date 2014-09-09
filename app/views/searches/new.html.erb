@@ -5,7 +5,7 @@
   </div>
       <div class="searchbar"><center>
          <%= form_for @search, :html => {class: "form-group"} do |f| %>
-         <%= f.text_field :topic, class: "form-control", placeholder: "enter in the hashtag you wish to track" %><br/>	
+         <%= f.text_field :topic, class: "form-control", placeholder: "Track one of #{@related_hashtags.count} hashtags" %><br/>	
      </center></div>
 
         <% end %>
@@ -42,13 +42,13 @@
  <div class="row">
 
    <div class="col-sm-4 text-center">
-      <img style="border-radius: 150px" src="img/icon/picture.svg">
+      <img class="img-circle" src="https://media.licdn.com/media/p/5/005/068/07d/0bcb1e0.jpg" height="250" width="250" >
       <h3>Brant Barger</h3>
       <p class="lead">Back end wizard, creator of logic </p>
   </div><!-- /.col-lg-4 -->
 
   <div class="col-sm-4 text-center">
-      <img style="border-radius: 500px" src="img/icon/picture.svg" class="img-circle">
+      <img class="img-circle" src="http://media-cache-ak0.pinimg.com/originals/7f/1f/f9/7f1ff9e2cc2b3be7f3f6de52c01dccd1.jpg" height="250" width="250">
       <h3>Aaron Goldsmith</h3>
       <p class="lead">Test Guru, jack of all trades </p>
 

@@ -13,8 +13,9 @@
  */
 @import 'bootstrap';
 
+
 .intro-header {
-    background-color:rgb(180,5,28);
+    background-color: rgb(242,200,213);
     padding-bottom: 300px;
     padding-top: 190px;
     height: 100%;
@@ -24,7 +25,7 @@
     text-align: center;
     font-size: 100px;
     margin-bottom: -27px;
-    color: #FE935B;
+    color: ##34495e;
     text-shadow: 1px 1px #ffffff;
 }
 .gimmicks {
@@ -64,6 +65,7 @@ h2,
 h3 {
   margin-top: 30px;
   margin-bottom: 5px;
+
 }
 h4,
 h5,
@@ -77,6 +79,7 @@ h6 {
 h1,
 .h1 {
   font-size: 80px;
+   text-decoration: none;
 }
 h2,
 .h2 {
@@ -104,7 +107,7 @@ p {
 }
 
 #screen2 {
-  background-color:#ffffff;
+  background-color: #ffffff;
   padding-bottom: 100px;
 
 }

@@ -2,9 +2,13 @@
         <section id="screen1">
 
           <div class="bnw">
+          	<h1> current categories </h1>
 
-            <h2> Top Categories </h2>
-            
+ 		<h4> <%@categories.each do |c|%>
+ 			   <h3>#<%= c.name %><br></h3>
+ 			   <% end %>
+
+ 		</h4>
 
 
             
