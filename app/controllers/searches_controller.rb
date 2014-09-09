@@ -6,6 +6,7 @@ class SearchesController < ApplicationController
 
   def new
   	@search = Search.new
+    @related_hashtags = RelatedHashtag.all
   end
 
 # hello this is a secret message. 

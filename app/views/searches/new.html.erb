@@ -5,7 +5,7 @@
   </div>
       <div class="searchbar"><center>
          <%= form_for @search, :html => {class: "form-group"} do |f| %>
-         <%= f.text_field :topic, class: "form-control", placeholder: "enter in the hashtag you wish to track" %><br/>	
+         <%= f.text_field :topic, class: "form-control", placeholder: "Track one of #{@related_hashtags.count} hashtags" %><br/>	
      </center></div>
 
         <% end %>
