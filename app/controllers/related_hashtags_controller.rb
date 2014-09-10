@@ -23,7 +23,11 @@ class RelatedHashtagsController < ApplicationController
     if @hashtag_feed.save
       @category = @hashtag_feed.category
       wordnik_json = Wordnik.word.get_definitions(@category.name)
-      @category_def = wordnik_json.first['text']
+      if wordnik_json != []
+        @category_def = wordnik_json.first['text']
+      else
+        @category_def = "(It's actually slang. We're not sure if it counts as a real category.)"
+      end
     end
     respond_with @hasher
   end
