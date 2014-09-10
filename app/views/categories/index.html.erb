@@ -1,17 +1,20 @@
 <center>
-        <section id="screen1">
-
-          <div class="bnw">
-          	<h1> current categories </h1>
-
- 		<h4> <%@categories.each do |c|%>
- 			   <h3>#<%= c.name %><br></h3>
- 			   <% end %>
-
- 		</h4>
-
-
-            
-          </div> 
-
-        </section>
+<section id="screen1">
+	<div class="bnw">
+    <h1> current categories </h1>
+      <h4> 
+      	<%@categories.each do |c|%>
+      	<div class ="row">
+      		<div class="col-md-8"> 
+ 	      	  <h2>#<%= c.name %></h2><br>
+ 	      	</div>
+ 	      	<div class="col-md-4">
+ 	      	  <% c.hashtag_feeds.each do |d| %>
+ 	      	  	<h4>#<%= d.name %></h4>
+ 	      	  <% end %>
+ 	      	</div>
+ 			  <% end %>
+ 			  </div>
+			</h4>
+	</div> 
+</section>
