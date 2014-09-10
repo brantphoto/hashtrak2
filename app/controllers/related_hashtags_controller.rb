@@ -26,7 +26,7 @@ class RelatedHashtagsController < ApplicationController
       if wordnik_json != []
         @category_def = wordnik_json.first['text']
       else
-        @category_def = "(It's actually slang. We're not sure if it counts as a real category.)"
+        @category_def = "(It's either shorthand or slang. We're not sure if it counts as a real category.)"
       end
     end
     respond_with @hasher
