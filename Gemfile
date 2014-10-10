@@ -18,12 +18,14 @@ gem 'wordnik'
 gem 'unicorn'
 
 group :development do
+  gem "bullet"
   gem 'meta_request'
   gem "better_errors"
   gem "binding_of_caller"
 end
 
 group :development, :test do
+  gem 'active_record_query_trace'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara' 
   gem 'guard-rspec', require: false
