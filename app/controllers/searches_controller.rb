@@ -57,22 +57,26 @@ class SearchesController < ApplicationController
     end
 
     response = HTTParty.get("https://api.instagram.com/v1/tags/#{hashfeed}/media/recent?client_id=e7e5e08b2c444bf5a395ff0d1e5427be")
-    parsedobjs = JSON.parse(response.body)
-    datar = parsedobjs['data']
+    #parsedobjs = JSON.parse(response.body)
+    datar = ['data']
+    tagz = Hash.new
     for i in datar do
-      tags = i['tags']
+      tags = i['tags'] 
+      r = Hash[tags.map {|x| [x, 1]}]
       id = i['id']
       date = i['created_time']
       location = i['location']
       iguser = i['user']['id']
       igusername = i['user']['username']
+      # change 71 to first_or_create
       if InstaUser.exists?(:userid => iguser)
         @z = InstaUser.where(:userid => iguser).first     
       else 
         @z = InstaUser.create(userid: iguser, username: igusername)
       end
+      # change 77 to find_or_create
       if Post.exists?(:instagram_id => id) === false
-        p = Post.create(hashtags:tags, instagram_id:id, location:location, created_time:date, hashtag_feed:@y, insta_user:@z)
+        p = Post.create(hashtags_hash:r, instagram_id:id, location:location, created_time:date, hashtag_feed:@y, insta_user:@z)
         relate_to_tag(p)
       else
       end
@@ -84,6 +88,7 @@ class SearchesController < ApplicationController
   def relate_to_tag(pozt)
     array = pozt.hashtags
     array.each do |t|
+      #change 91 to find_or_create
 	    if RelatedHashtag.exists?(:name => t)
 	      x = RelatedHashtag.where(:name => t).first
 	      RelatedHashtagPost.create(related_hashtag:x, post:pozt)

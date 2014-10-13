@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908022402) do
+ActiveRecord::Schema.define(version: 20141013183848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140908022402) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "auto_categorized", default: false
+    t.hstore   "hashtag_hash"
   end
 
   add_index "hashtag_feeds", ["category_id"], name: "index_hashtag_feeds_on_category_id", using: :btree
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140908022402) do
     t.json     "hashtags"
     t.integer  "created_time"
     t.json     "location"
+    t.hstore   "hashtag_hash"
   end
 
   add_index "posts", ["hashtag_feed_id"], name: "index_posts_on_hashtag_feed_id", using: :btree
