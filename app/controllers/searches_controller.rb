@@ -16,7 +16,7 @@ class SearchesController < ApplicationController
       recentposts(@search.topic)
       @search.hashtag_feed = @y
       @search.save
-      redirect_to hashtag_feed_related_hashtags_path(@y.id)
+      redirect_to hashtag_feed_path(@y)
     else
       respond_to do |format|
         format.html { render action: 'new' }
@@ -46,40 +46,51 @@ class SearchesController < ApplicationController
 
     presponse = HTTParty.get("https://api.instagram.com/v1/tags/#{hashfeed}?client_id=e7e5e08b2c444bf5a395ff0d1e5427be")
     parsedobj1 = JSON.parse(presponse.body)
-    @sizer = parsedobj1['data']['media_count']
+    sizer = parsedobj1['data']['media_count']
     namer = parsedobj1['data']['name']
-    if HashtagFeed.exists?(:name => namer)
-      @y = HashtagFeed.where(:name => namer).first
-      HashSize.create(size:@sizer, hashtag_feed: @y)
-    else 
-      @y = HashtagFeed.create(name: namer)
-      HashSize.create(size: @sizer, hashtag_feed: @y)
-    end
+    @y = HashtagFeed.where(name:namer).first_or_create
+    HashSize.create(size:sizer, hashtag_feed:@y)
+    #if HashtagFeed.exists?(:name => namer)
+      #@y = HashtagFeed.where(:name => namer).first
+      #HashSize.create(size:@sizer, hashtag_feed: @y)
+    #else 
+      #@y = HashtagFeed.create(name: namer)
+      #HashSize.create(size: @sizer, hashtag_feed: @y)
+    #end
 
     response = HTTParty.get("https://api.instagram.com/v1/tags/#{hashfeed}/media/recent?client_id=e7e5e08b2c444bf5a395ff0d1e5427be")
     #parsedobjs = JSON.parse(response.body)
-    datar = ['data']
+    datar = response['data']
     tagz = Hash.new
     for i in datar do
       tags = i['tags'] 
       r = Hash[tags.map {|x| [x, 1]}]
+      tagz.merge!(r) { |key, v1, v2| v1 + v2 }
       id = i['id']
       date = i['created_time']
       location = i['location']
       iguser = i['user']['id']
       igusername = i['user']['username']
       # change 71 to first_or_create
-      if InstaUser.exists?(:userid => iguser)
-        @z = InstaUser.where(:userid => iguser).first     
-      else 
-        @z = InstaUser.create(userid: iguser, username: igusername)
-      end
+      z = InstaUser.where(userid:iguser, username:igusername).first_or_create
+      #if InstaUser.exists?(:userid => iguser)
+        #@z = InstaUser.where(:userid => iguser).first     
+      #else 
+        #@z = InstaUser.create(userid: iguser, username: igusername)
+      #end
       # change 77 to find_or_create
       if Post.exists?(:instagram_id => id) === false
-        p = Post.create(hashtags_hash:r, instagram_id:id, location:location, created_time:date, hashtag_feed:@y, insta_user:@z)
-        relate_to_tag(p)
-      else
+        p = Post.create(hashtag_hash:r, instagram_id:id, location:location, created_time:date, hashtag_feed:@y, insta_user:z)
+        #relate_to_tag(p)
       end
+    end
+    if @y.hashtag_hash === nil
+      @y.hashtag_hash = Hash.new
+      @y.hashtag_hash.merge!(tagz){ |key, v1, v2| v1.to_i + v2 }
+      @y.save
+    else
+      @y.hashtag_hash.merge!(tagz){ |key, v1, v2| v1.to_i + v2 }
+      @y.save
     end
   end
 

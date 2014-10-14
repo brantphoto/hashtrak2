@@ -1,6 +1,6 @@
-relatedManager.controller('RelatedCtrl', ['$scope', 'RelatedHashtag',  function($scope, RelatedHashtag){
+relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed',  function($scope, HashtagFeed){
 
-   $scope.relatedhashtags =  RelatedHashtag.query(function(json){
+   $scope.relatedhashtags =  HashtagFeed.query(function(json){
      var tags = json;
      $scope.myData = {
       labels: [tags[0][0],tags[1][0], tags[2][0],tags[3][0],tags[4][0],tags[5][0],tags[6][0],tags[7][0],tags[8][0],tags[9][0],tags[10][0]],

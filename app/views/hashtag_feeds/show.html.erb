@@ -1,0 +1,98 @@
+<div class="container1">
+  <div ng-app="relatedManager">
+    <div ng-controller="RelatedCtrl as r">
+      <center>
+       <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav nav-justified">
+              <li><a href="/../../#section2">Hashtag Relations</a></li>
+              <li><a href="#section3">Size Over Time</a></li>
+              <li class="active"><a href="/"><strong>Search Again</strong></a></li>
+              <li><a href="#section4">Category</a></li>
+              <li><a href="#section5">What's Trending</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+      </div><!--/.navbar -->
+
+
+
+      <section id="screen3">
+        <center>
+          <h1> Hashtags most associated with
+            <br> 
+            <strong> #<%=@hashtag_feed.name %> </strong>
+            <br>
+          </h1>
+          <h1> which has the category of
+            <br>
+            <strong> #<%=@category.name%> </strong>
+          </h1>
+          <h1> which has the<br>
+           following<br>
+           <strong>#definition</strong>
+           <br><br>I<br>V</h1>
+           <h1> <strong>#<%= @category.name %>: </strong>
+            <%= @category_def %>
+          </h1>
+        </center>
+
+
+      </section>
+
+
+      <section id="screen1">
+
+        <h2>does #<strong><%=@hashtag_feed.name%></strong> fit that definition & category? </h2>
+        <br>
+        <h2> <u>Here are some related hashtags</u> </h2>
+        <%@hasher.first(10).each do |x| %>
+
+        <h3><li><strong>#<%= x[0] %></strong> shows up 
+          <%= x[1] %> times</li></h3>
+
+          <% end %>
+
+         
+
+          <canvas barchart options="options" data="myChartData" width="800" height="400"></canvas>
+
+        </section>
+
+        <section id="screen2">
+
+          <center><h2> Hashtag Size over Time </h2>
+            <% @hashtag_feed.hash_sizes.each do |y| %>
+            <li>
+              The total number of posts containing the hashtag "<%=@hashtag_feed.name%>" was <%=number_with_delimiter(y.size) %> during the time of <%= y.created_at %>
+              <% end %>
+              <br>
+              <%= @top_hashfeed_counter %>
+
+                 
+
+<canvas barchart options="myChartOptions" data="myData" width="800" height="400"></canvas>
+
+
+                 <h1> <a href="/categories/index"> Here Are Our Current Categories </a> </h1>
+
+            </div>
+          </center>
+
+          
+
+        </section>
+
+        </center>
+      </div>
+
+    </div>
+  </div>

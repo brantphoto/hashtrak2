@@ -3,20 +3,20 @@ Hashtrek::Application.routes.draw do
   get "categories/show"
   get "searches/index"
   get "searches/new"
-  get "searches/create"
-  get "searches/destroy"
-  get "related_hashtags/index"
-  get "related_hashtags/new"
-  get "related_hashtags/create"
-  get "related_hashtags/edit"
-  get "related_hashtags/update"
-  get "related_hashtags/destroy"
-  get "hashtag_feeds/index"
-  get "hashtag_feeds/new"
-  get "hashtag_feeds/create"
-  get "hashtag_feeds/edit"
-  get "hashtag_feeds/update"
-  get "hashtag_feeds/destroy"
+  # get "searches/create"
+  # get "searches/destroy"
+  # get "related_hashtags/index"
+  # get "related_hashtags/new"
+  # get "related_hashtags/create"
+  # get "related_hashtags/show"
+  # get "related_hashtags/update"
+  # get "related_hashtags/destroy"
+  # get "hashtag_feeds/index"
+  # get "hashtag_feeds/new"
+  # get "hashtag_feeds/create"
+  # get "hashtag_feeds/edit"
+  # get "hashtag_feeds/update"
+  # get "hashtag_feeds/destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -24,10 +24,11 @@ Hashtrek::Application.routes.draw do
   root 'searches#new'
   resources :categories
   resources :searches
-  resources :hashtag_feeds do
-    resources :related_hashtags
-  end 
+  resources :hashtag_feeds, only: [:show, :create, :update]
 
+scope '/api' do
+  resources :hashtag_feeds, only: [:show], defaults: { format: :json }
+end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
