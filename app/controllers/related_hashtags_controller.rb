@@ -12,7 +12,7 @@ class RelatedHashtagsController < ApplicationController
        end
     end   
     @hasher = @hasher.sort_by {|k,v| v}.reverse
-    @hasher.delete_if {|key, value| key == @hashtag_feed.name }
+    #@hasher.delete_if {|key, value| key == @hashtag_feed.name }
     @hash_namer = @hasher[0][0]
     if HashtagFeed.exists?(:name => @hash_namer)
       @top_hashfeed = HashtagFeed.where(:name => @hash_namer).first
