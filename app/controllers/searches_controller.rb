@@ -74,12 +74,6 @@ class SearchesController < ApplicationController
       igusername = i['user']['username']
       # change 71 to first_or_create
       z = InstaUser.where(userid:iguser, username:igusername).first_or_create
-      #if InstaUser.exists?(:userid => iguser)
-        #@z = InstaUser.where(:userid => iguser).first     
-      #else 
-        #@z = InstaUser.create(userid: iguser, username: igusername)
-      #end
-      # change 77 to find_or_create
       if Post.exists?(:instagram_id => id) === false
         p = Post.create(hashtag_hash:r, instagram_id:id, location:location, created_time:date, hashtag_feed:@y, insta_user:z)
         #relate_to_tag(p)
@@ -93,26 +87,25 @@ class SearchesController < ApplicationController
     else
       #binding.pry
       z =  @y.hashtag_hash.merge!(tagz){ |key, v1, v2|( v1.to_i + v2).to_s }
-      @y.hashtag_hash = z
-      @y.save
+      HashtagFeed.where(name:@y.name).first.update(hashtag_hash:z)
     end
   end
 
 
 
-  def relate_to_tag(pozt)
-    array = pozt.hashtags
-    array.each do |t|
-      #change 91 to find_or_create
-	    if RelatedHashtag.exists?(:name => t)
-	      x = RelatedHashtag.where(:name => t).first
-	      RelatedHashtagPost.create(related_hashtag:x, post:pozt)
-	    else
-	      x = RelatedHashtag.create(name:t)
-	      RelatedHashtagPost.create(related_hashtag:x, post:pozt)
-	    end
-    end
-  end
+  #def relate_to_tag(pozt)
+    #array = pozt.hashtags
+    #array.each do |t|
+      ##change 91 to find_or_create
+			#if RelatedHashtag.exists?(:name => t)
+				#x = RelatedHashtag.where(:name => t).first
+				#RelatedHashtagPost.create(related_hashtag:x, post:pozt)
+			#else
+				#x = RelatedHashtag.create(name:t)
+				#RelatedHashtagPost.create(related_hashtag:x, post:pozt)
+			#end
+    #end
+  #end
 
 
   def destroy
