@@ -31,6 +31,8 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem "jasmine", github: "pivotal/jasmine-gem"
   gem 'shoulda-matchers'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 gem 'angularjs-rails'

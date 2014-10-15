@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require Chart
-//= require angular.min
+//= require angular
 //= require angular-resource
 //= require angular-rails-templates
 //= require jquery

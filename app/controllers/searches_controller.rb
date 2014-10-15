@@ -25,22 +25,22 @@ class SearchesController < ApplicationController
     end
   end
 
-  def creator(allrelatedhashes)
-    allrelatedhashes.each do |r|
-      @search = Search.create(topic:r.name)
-      if @search.save
-        recentposts(@search.topic)
-        @search.hashtag_feed = @y
-        @search.save
-        sleep 2
-      else
-        respond_to do |format|
-          format.html { render action: 'new' }
-          format.json { render json: @search.errors, status: :unprocessable_entity }
-        end
-      end
-    end
-  end
+  #def creator(allrelatedhashes)
+    #allrelatedhashes.each do |r|
+      #@search = Search.create(topic:r.name)
+      #if @search.save
+        #recentposts(@search.topic)
+        #@search.hashtag_feed = @y
+        #@search.save
+        #sleep 2
+      #else
+        #respond_to do |format|
+          #format.html { render action: 'new' }
+          #format.json { render json: @search.errors, status: :unprocessable_entity }
+        #end
+      #end
+    #end
+  #end
 
   def recentposts(hashfeed)
 
@@ -65,8 +65,9 @@ class SearchesController < ApplicationController
     for i in datar do
       tags = i['tags'] 
       r = Hash[tags.map {|x| [x, 1]}]
-      tagz.merge!(r) { |key, v1, v2| v1 + v2 }
+      tagz.merge!(r) { |key, v1, v2| v1.to_i + v2.to_i }
       id = i['id']
+      #binding.pry
       date = i['created_time']
       location = i['location']
       iguser = i['user']['id']
@@ -84,12 +85,15 @@ class SearchesController < ApplicationController
         #relate_to_tag(p)
       end
     end
+    # y is the HashtagFeed
     if @y.hashtag_hash === nil
       @y.hashtag_hash = Hash.new
-      @y.hashtag_hash.merge!(tagz){ |key, v1, v2| v1.to_i + v2 }
+      @y.hashtag_hash.merge!(tagz){ |key, v1, v2| (v1.to_i + v2).to_s }
       @y.save
     else
-      @y.hashtag_hash.merge!(tagz){ |key, v1, v2| v1.to_i + v2 }
+      #binding.pry
+      z =  @y.hashtag_hash.merge!(tagz){ |key, v1, v2|( v1.to_i + v2).to_s }
+      @y.hashtag_hash = z
       @y.save
     end
   end
