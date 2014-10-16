@@ -16,6 +16,7 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'wordnik'
 gem 'unicorn'
+gem 'active_model_serializers'
 
 group :development do
   gem "bullet"

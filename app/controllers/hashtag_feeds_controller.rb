@@ -1,12 +1,12 @@
 class HashtagFeedsController < ApplicationController
   respond_to :html, :json
+  before_action :get_hashtag_feed
 
   def show
-    @hashtag_feed = HashtagFeed.where(id: params[:id]).first
+    #@hashtag_feed = HashtagFeed.where(id: params[:id]).first
     @hasher = @hashtag_feed.hashtag_hash.sort_by {|k,v| v}.reverse
-    #@hasher.delete_if {|key, value| key == @hashtag_feed.name }
+    @hasher.delete_if {|key, value| key == @hashtag_feed.name }
     @hash_namer = @hasher[0][0]
-
     @top_hashfeed = HashtagFeed.where(:name => @hash_namer).first_or_create
     @hashtag_feed.update(category:whobigger(@hashtag_feed, @top_hashfeed))
     if @hashtag_feed.save
@@ -18,7 +18,7 @@ class HashtagFeedsController < ApplicationController
         @category_def = "(It's either shorthand or slang. We're not sure if it counts as a real category.)"
       end
     end
-    respond_with @hasher
+    respond_with @hashtag_feed, each_serializer: HashtagFeedSerializer
   end
 
   def whobigger(hashtag_feed,top_hashfeed)
@@ -47,5 +47,9 @@ class HashtagFeedsController < ApplicationController
 
   def get_category(hashfeed) 
     return Category.where(:name => hashfeed.name).first_or_create
+  end
+  private
+  def get_hashtag_feed  
+     @hashtag_feed = HashtagFeed.find(params[:id])
   end
 end

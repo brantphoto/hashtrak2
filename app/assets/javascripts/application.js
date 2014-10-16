@@ -16,7 +16,6 @@
 //= require angular
 //= require angular-resource
 //= require angular-rails-templates
-//= require jquery
 //= require_tree ../templates
 //= require_tree .
 //= require angular/angles

@@ -1,5 +1,5 @@
-relatedManager.factory('HashtagFeed', ['$resource', '$location', function($resource, $location){
-    var og = $location.url()
+relatedManager.factory('HashtagFeed', ['$resource', function($resource){
+
 	return $resource('/api/hashtag_feeds/:id',
 		{ id: '@id' },
 		{update: {method: 'PATCH'} }

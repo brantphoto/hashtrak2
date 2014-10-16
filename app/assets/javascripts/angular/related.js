@@ -1,7 +1,19 @@
-relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed',  function($scope, HashtagFeed){
+relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', '$location', function($scope, HashtagFeed, $location){
+   
+ 
+   // var urlz = $location.path();
+   // var urlz = urlz.split('/');
+   // $scope.hash_id = urlz[urlz.length - 1];
+   relatedhashtags = HashtagFeed.all;
 
-   $scope.relatedhashtags =  HashtagFeed.query(function(json){
+   
+
+   $scope.x1 = "testing";
+   var relatedhashtags = HashtagFeed.query({id: $scope.hash_id});
+
+   relatedhashtags.$promise.then(function(json){
      var tags = json;
+     //$scope.x1 = "testing";
      $scope.myData = {
       labels: [tags[0][0],tags[1][0], tags[2][0],tags[3][0],tags[4][0],tags[5][0],tags[6][0],tags[7][0],tags[8][0],tags[9][0],tags[10][0]],
       datasets: [
@@ -14,17 +26,7 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed',  function($sc
         }
       ]
      };
-      //$scope.tags = tags;
-      //$scope.x1 = tags[0][0]
-      //$scope.x2 = tags[1][0]
-      //$scope.x3 = tags[2][0]
-      //$scope.x4 = tags[3][0]
-      //$scope.x5 = tags[4][0]
-      //$scope.y1 = tags[0][1]
-      //$scope.y2 = tags[1][1]
-      //$scope.y3 = tags[2][1]
-      //$scope.y4 = tags[3][1]
-      //$scope.y5 = tags[4][1]
+
       });
 
 $scope.myChartOptions = {

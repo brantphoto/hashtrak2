@@ -27,7 +27,7 @@ Hashtrek::Application.routes.draw do
   resources :hashtag_feeds, only: [:show, :create, :update]
 
 scope '/api' do
-  resources :hashtag_feeds, only: [:show], defaults: { format: :json }
+  resources :hashtag_feeds, only: [:index, :show], defaults: { format: :json }
 end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
