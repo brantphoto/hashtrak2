@@ -6,24 +6,24 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', '$location', 
    // $scope.hash_id = urlz[urlz.length - 1];
    //relatedhashtags = HashtagFeed.all;
 
-   
+   console.log(gon.hashfeed_name);
 
    //$scope.x1 = "testing";
    var relatedhashtags = HashtagFeed.get({id: gon.hashfeed_name }, function(){
-     var tags = relatedhashtags.sorted_hash;
+     console.log('hello');
      $scope.x1 = "testing";
-     $scope.myData = {
-      labels: [tags[0][0],tags[1][0], tags[2][0],tags[3][0],tags[4][0],tags[5][0],tags[6][0],tags[7][0],tags[8][0],tags[9][0],tags[10][0]],
-      datasets: [
-        {
-        fillColor: "rgba(220,220,220,0.5)",
-        strokeColor: "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(220,220,220,1)", 
-        data: [tags[0][1], tags[1][1], tags[2][1], tags[3][1], tags[4][1], tags[5][1], tags[6][1],tags[7][1], tags[8][1], tags[9][1], tags[10][1]]
-        }
-      ]
-     };
+     //$scope.myData = {
+      //labels: [tags[0][0],tags[1][0], tags[2][0],tags[3][0],tags[4][0],tags[5][0],tags[6][0],tags[7][0],tags[8][0],tags[9][0],tags[10][0]],
+      //datasets: [
+        //{
+        //fillColor: "rgba(220,220,220,0.5)",
+        //strokeColor: "rgba(220,220,220,0.8)",
+        //highlightFill: "rgba(220,220,220,0.75)",
+        //highlightStroke: "rgba(220,220,220,1)", 
+        //data: [tags[0][1], tags[1][1], tags[2][1], tags[3][1], tags[4][1], tags[5][1], tags[6][1],tags[7][1], tags[8][1], tags[9][1], tags[10][1]]
+        //}
+      //]
+     //};
 
       });
 
