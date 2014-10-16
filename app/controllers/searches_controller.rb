@@ -15,6 +15,7 @@ class SearchesController < ApplicationController
       @search.preptopic
       recentposts(@search.topic)
       @search.hashtag_feed = @y
+      #gon.hashfeed_name = @search.topic
       @search.save
       redirect_to hashtag_feed_path(@y)
     else

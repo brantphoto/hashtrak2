@@ -89,6 +89,11 @@ GEM
       faraday (>= 0.7.4, < 0.10)
     ffi (1.9.3)
     formatador (0.2.5)
+    gon (5.2.0)
+      actionpack (>= 2.3.0)
+      json
+      multi_json
+      request_store (>= 1.0.5)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -174,6 +179,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    request_store (1.1.0)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -256,6 +262,7 @@ DEPENDENCIES
   capybara
   chart-js-rails
   coffee-rails (~> 4.0.0)
+  gon
   guard-rspec
   httparty
   instagram

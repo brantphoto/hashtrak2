@@ -4,16 +4,14 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', '$location', 
    // var urlz = $location.path();
    // var urlz = urlz.split('/');
    // $scope.hash_id = urlz[urlz.length - 1];
-   relatedhashtags = HashtagFeed.all;
+   //relatedhashtags = HashtagFeed.all;
 
    
 
-   $scope.x1 = "testing";
-   var relatedhashtags = HashtagFeed.query({id: $scope.hash_id});
-
-   relatedhashtags.$promise.then(function(json){
-     var tags = json;
-     //$scope.x1 = "testing";
+   //$scope.x1 = "testing";
+   var relatedhashtags = HashtagFeed.get({id: gon.hashfeed_name }, function(){
+     var tags = relatedhashtags.sorted_hash;
+     $scope.x1 = "testing";
      $scope.myData = {
       labels: [tags[0][0],tags[1][0], tags[2][0],tags[3][0],tags[4][0],tags[5][0],tags[6][0],tags[7][0],tags[8][0],tags[9][0],tags[10][0]],
       datasets: [

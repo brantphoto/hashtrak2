@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'wordnik'
 gem 'unicorn'
 gem 'active_model_serializers'
+gem 'gon'
 
 group :development do
   gem "bullet"
