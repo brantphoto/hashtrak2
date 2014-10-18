@@ -2,7 +2,7 @@ class HashSizesController < ApplicationController
  respond_to :json, :html
 
   def index
- 		@hash_sizes = HashTagFeed.where(id: gon.hashfeed_name).hash_sizes
+ 		@hash_sizes = HashtagFeed.where(id:2 ).first.hash_sizes.all
  		respond_with @hash_sizes, each_serializer: HashSizeSerializer
   end
 
