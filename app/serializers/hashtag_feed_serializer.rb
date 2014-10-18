@@ -8,5 +8,6 @@ class HashtagFeedSerializer < ActiveModel::Serializer
   def hash_namer
     @e[0][0]
   end
+  
 
 end

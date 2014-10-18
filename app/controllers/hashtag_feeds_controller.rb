@@ -2,6 +2,7 @@ class HashtagFeedsController < ApplicationController
   respond_to :html, :json
   before_action :get_hashtag_feed
 
+
   def show
     #@hashtag_feed = HashtagFeed.where(id: params[:id]).first
 

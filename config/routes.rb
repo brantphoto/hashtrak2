@@ -1,4 +1,5 @@
 Hashtrek::Application.routes.draw do
+  get "hash_sizes/index"
   get "categories/index"
   get "categories/show"
   get "searches/index"
@@ -21,7 +22,9 @@ Hashtrek::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
   root 'searches#new'
+  resources :hash_sizes, only: [:index, :show], defaults: { format: :json }
   resources :categories
   resources :searches
   resources :hashtag_feeds, only: [:index, :show, :create, :update]

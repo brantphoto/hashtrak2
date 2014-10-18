@@ -1,4 +1,4 @@
-relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', '$location', function($scope, HashtagFeed, $location){
+relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', 'HashSize', '$location', function($scope, HashtagFeed, HashSize, $location){
    
  
    // var urlz = $location.path();
@@ -6,7 +6,8 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', '$location', 
    // $scope.hash_id = urlz[urlz.length - 1];
    //relatedhashtags = HashtagFeed.all;
 
-   console.log(gon.hashfeed_name);
+   // console.log(gon.hashfeed_name);
+
 
    //$scope.x1 = "testing";
    var relatedhashtags = HashtagFeed.get({id: gon.hashfeed_name }, function(json){
@@ -28,6 +29,14 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', '$location', 
      };
 
       });
+
+
+
+   var hashsizesmeow = HashSize.query();
+    hashsizesmeow.$promise.then(function(json) {
+      console.log(json);
+    });
+   
 
 $scope.myChartOptions = {
     //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
