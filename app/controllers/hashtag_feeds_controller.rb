@@ -7,7 +7,7 @@ class HashtagFeedsController < ApplicationController
     #@hashtag_feed = HashtagFeed.where(id: params[:id]).first
 
      @hashtag_feed = HashtagFeed.where(id: params[:id]).first
-     gon.hashfeed_name = @hashtag_feed.id
+     gon.hashfeed_id = @hashtag_feed.id
     @hasher = @hashtag_feed.hashtag_hash.sort_by {|k,v| v}.reverse
     @hasher.delete_if {|key, value| key == @hashtag_feed.name }
     @hash_namer = @hasher[0][0]

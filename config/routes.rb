@@ -24,11 +24,11 @@ Hashtrek::Application.routes.draw do
   # You can have the root of your site routed with "root"
 
   root 'searches#new'
-  resources :hash_sizes, only: [:index, :show], defaults: { format: :json }
   resources :categories
   resources :searches
-  resources :hashtag_feeds, only: [:index, :show, :create, :update]
-
+  resources :hashtag_feeds, only: [:index, :show, :create, :update] do
+    resources :hash_sizes, only: [:index, :show], defaults: { format: :json }
+  end
 # scope '/api' do
 #   resources :hashtag_feeds, only: [:index, :show], defaults: { format: :json }
 # end

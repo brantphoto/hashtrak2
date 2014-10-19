@@ -10,7 +10,7 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', 'HashSize', '
 
 
    //$scope.x1 = "testing";
-   var relatedhashtags = HashtagFeed.get({id: gon.hashfeed_name }, function(json){
+   var relatedhashtags = HashtagFeed.get({id: gon.hashfeed_id }, function(json){
      var tags = json.sorted_hash;
      console.log('hello');
      $scope.x1 = "testing";
@@ -32,7 +32,7 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', 'HashSize', '
 
 
 
-   var hashsizesmeow = HashSize.query();
+   var hashsizesmeow = HashSize.query({hashtag_feed_id: gon.hashfeed_id});
     hashsizesmeow.$promise.then(function(fp) {
       $scope.lineData = {
     labels: [(fp[0]['month']) + "/" + (fp[0]['day']), (fp[1]['month']) + "/" + (fp[1]['day']),(fp[2]['month']) + "/" + (fp[2]['day']),(fp[3]['month']) + "/" + (fp[3]['day']),(fp[4]['month']) + "/" + (fp[4]['day'])],
