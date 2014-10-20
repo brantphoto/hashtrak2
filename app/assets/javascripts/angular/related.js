@@ -1,30 +1,41 @@
 relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', 'HashSize', '$location', function($scope, HashtagFeed, HashSize, $location){
    
- 
-   // var urlz = $location.path();
-   // var urlz = urlz.split('/');
-   // $scope.hash_id = urlz[urlz.length - 1];
-   //relatedhashtags = HashtagFeed.all;
+  var relatedhashtags = HashtagFeed.get({id: gon.hashfeed_id }, function(json){
+    var tags = json.sorted_hash;
 
-   // console.log(gon.hashfeed_name);
+    barlabelreturn = function(relatedtagsjson) {
 
+      loopsize = function(objectcollection) {
+        if (objectcollection.length < 10) {
+          return objectcollection.length;
+        } else {
+          return 10;
+        }
+      };
 
-   //$scope.x1 = "testing";
-   var relatedhashtags = HashtagFeed.get({id: gon.hashfeed_id }, function(json){
-     var tags = json.sorted_hash;
-     console.log('hello');
-     $scope.x1 = "testing";
+      var labelsanddata = new Array;
+      var labels = new Array;
+      var datar = new Array;
+      for (var i = 0; i < loopsize(relatedtagsjson); i++) {
+        labels.push(tags[i][0]);
+        datar.push(tags[i][1]);
+      }
+      labelsanddata.push(labels,datar);
+      return labelsanddata;
+    };
+
+     var finalbardata = barlabelreturn(tags);
      console.log(json);
      $scope.myData = {
-      labels: [tags[0][0],tags[1][0], tags[2][0],tags[3][0],tags[4][0],tags[5][0],tags[6][0],tags[7][0],tags[8][0],tags[9][0],tags[10][0]],
+      labels: finalbardata[0],
       datasets: [
         {
         fillColor: "rgba(220,220,220,0.5)",
         strokeColor: "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)", 
-        data: [tags[0][1], tags[1][1], tags[2][1], tags[3][1], tags[4][1], tags[5][1], tags[6][1],tags[7][1], tags[8][1], tags[9][1], tags[10][1]]
-        }
+        data: finalbardata[1]
+      }
       ]
      };
 
@@ -32,10 +43,36 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', 'HashSize', '
 
 
 
-   var hashsizesmeow = HashSize.query({hashtag_feed_id: gon.hashfeed_id});
-    hashsizesmeow.$promise.then(function(fp) {
+   var hashsizes = HashSize.query({hashtag_feed_id: gon.hashfeed_id});
+    hashsizes.$promise.then(function(json) {
+
+
+      linelabelreturn = function(hashsizesjson) {
+
+        loopsize = function(objectcollection) {
+          if (objectcollection.length < 10) {
+            return objectcollection.length;
+          } else {
+            return 10;
+          }
+        };
+
+        var labelsanddata = new Array;
+        var labels = new Array;
+        var datar = new Array;
+        for (var i = 0; i < loopsize(json); i++) {
+          labels.push(hashsizesjson[i]['month'] + "/" + hashsizesjson[i]['day']);
+          datar.push(hashsizesjson[i]['size']);
+        }
+        labelsanddata.push(labels,datar);
+        return labelsanddata;
+      };
+
+      var finallinedata = linelabelreturn(json);
+      console.log(json);
+
       $scope.lineData = {
-    labels: [(fp[0]['month']) + "/" + (fp[0]['day']), (fp[1]['month']) + "/" + (fp[1]['day']),(fp[2]['month']) + "/" + (fp[2]['day']),(fp[3]['month']) + "/" + (fp[3]['day']),(fp[4]['month']) + "/" + (fp[4]['day'])],
+    labels: finallinedata[0], 
     datasets: [
         {
             label: "My First dataset",
@@ -45,11 +82,10 @@ relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', 'HashSize', '
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [fp[0]['size'], fp[1]['size'],fp[2]['size'],fp[3]['size'], fp[4]['size']]
+            data: finallinedata[1]
         }
     ]
-};
-      console.log();
+    };
     });
    
 
