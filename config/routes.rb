@@ -1,9 +1,9 @@
 Hashtrek::Application.routes.draw do
-  get "hash_sizes/index"
-  get "categories/index"
-  get "categories/show"
-  get "searches/index"
-  get "searches/new"
+  #get "hash_sizes/index"
+  #get "categories/index"
+  #get "categories/show"
+  #get "searches/index"
+  #get "searches/new"
   # get "searches/create"
   # get "searches/destroy"
   # get "related_hashtags/index"
@@ -23,7 +23,6 @@ Hashtrek::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'searches#new'
   resources :categories
   resources :searches
   resources :hashtag_feeds, only: [:index, :show, :create, :update] do
