@@ -1,0 +1,184 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+@import 'bootstrap';
+
+
+.intro-header {
+    background-color: rgb(242,200,213);
+    padding-bottom: 300px;
+    padding-top: 190px;
+    height: 100%;
+}
+
+.hashtrek {
+    text-align: center;
+    font-size: 100px;
+    margin-bottom: -27px;
+    color: #34495e;
+    text-shadow: 1px 1px #ffffff;
+}
+.gimmicks {
+    text-align: center;
+    font-size: 50px;
+}
+.searchbar {
+    width: 70%;
+    padding-top: 20%;
+    margin: 0 auto;
+}
+
+.form-control {
+    width: 75%;
+    height:70px;
+    font-size: 30px;
+}
+
+
+body {
+    height: 100%;
+    width: 100%;
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.72222;
+      color: #34495e;
+}
+.devs {
+    padding-top: 70px;
+    padding-bottom: 200px;
+}
+.col-sm-4 {
+    padding-top: 100px;
+}
+h1,
+h2,
+h3 {
+  margin-top: 30px;
+  margin-bottom: 5px;
+
+}
+h4,
+h5,
+h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+h6 {
+  font-weight: normal;
+}
+h1,
+.h1 {
+  font-size: 80px;
+   text-decoration: none;
+}
+
+h2,
+.h2 {
+  font-size: 63px;
+}
+h3,
+.h3 {
+  font-size: 30px;
+}
+h4,
+.h4 {
+  font-size: 20px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.72222;
+  margin: 0 0 15px;
+}
+
+/* Screens Settings */
+#screen1 {  
+  background-color:rgb(242,200,213);
+  padding-bottom: 100px;
+  padding-top: 30px;
+}
+
+#screen2 {
+  background-color: #ffffff;
+  padding-bottom: 100px;
+
+}
+
+#screen3 {
+  background-color:rgb(242,200,213);
+  padding-bottom: 200px;
+  padding-top: 30px;
+}
+
+
+#nav {
+  width: 100%;
+  position:static;
+  height: 55px;
+}
+
+#nav.affix {
+   position: fixed;
+   top: 0;
+   z-index:10;
+   -webkit-transition: all .6s ease-in-out;
+}
+
+@media (min-width: 767px) {
+  .navbar-nav.nav-justified > li{
+      float:none;
+  }
+}
+.navbar-nav {
+  margin: 1px 1px; 
+}  
+  
+/* customize nav style */
+.navbar-custom {
+    background-color: #2e2e2e;
+  font-weight:900;
+    text-transform:uppercase;
+    border-width:0;
+}
+.navbar-custom  .navbar-nav>li>a {
+  color: #ddd;
+}
+.navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
+  background-color: #000;
+}
+.navbar-custom .dropdown-menu{
+  right:0;
+}
+
+.scroll-top {
+   position:fixed;
+   bottom:0;
+   right:6%;
+   z-index:100;
+   background: #ffcc33;
+   font-size:24px;
+   border-top-left-radius:3px;
+   border-top-right-radius:3px;
+}
+.scroll-top a:link,.scroll-top a:visited {
+  color:#222;
+} 
+
+.howtall {
+  height: 600px;
+}
+
+
+
+
+ 
