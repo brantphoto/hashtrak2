@@ -28,6 +28,8 @@ Hashtrek::Application.routes.draw do
   resources :hashtag_feeds, only: [:index, :show, :create, :update] do
     resources :hash_sizes, only: [:index, :show], defaults: { format: :json }
   end
+
+  root 'searches#new'
 # scope '/api' do
 #   resources :hashtag_feeds, only: [:index, :show], defaults: { format: :json }
 # end
