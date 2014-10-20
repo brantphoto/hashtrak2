@@ -2,7 +2,7 @@ class HashtagFeedSerializer < ActiveModel::Serializer
   attributes :id, :sorted_hash, :hash_namer 
 
   def sorted_hash
-  @e = object.hashtag_hash.sort_by {|k,v| v}.reverse
+  @e = object.hashtag_hash.sort_by {|k,v| v.to_i}.reverse
   end
 
   def hash_namer
