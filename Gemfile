@@ -38,7 +38,6 @@ group :development, :test do
 end
 
 gem 'angularjs-rails'
-gem 'active_model_serializers'
 gem 'angular-rails-templates'
 
 gem 'bcrypt', '~> 3.1.7'
