@@ -1,6 +1,5 @@
 class HashtagFeedsController < ApplicationController
   respond_to :html, :json
-  before_action :get_hashtag_feed
 
 
   def show
@@ -51,10 +50,5 @@ class HashtagFeedsController < ApplicationController
 
   def get_category(hashfeed) 
     return Category.where(:name => hashfeed.name).first_or_create
-  end
-  private
-  def get_hashtag_feed  
-     #@hashtag_feed = HashtagFeed.where(name: params[:id]).first
-     #gon.hashfeed_name = @hashtag_feed.name 
   end
 end

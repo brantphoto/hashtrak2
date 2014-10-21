@@ -18,7 +18,7 @@
 //= require angular-rails-templates
 //= require_tree ../templates
 //= require_tree .
-//= require angular/angles
+//= require angularapp/directives/angles
 //= require bootstrap
 
 

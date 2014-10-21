@@ -1,6 +1,5 @@
 <div class="container1">
   <div ng-app="relatedManager">
-    <div ng-controller="RelatedCtrl as r">
       <center>
        <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
         <div class="container">
@@ -62,8 +61,9 @@
           <% end %>
 
          
-
+<div ng-controller="hashSizeCtrl as hs">
 <canvas linechart options="options" data="lineData" width="300" height="300"></canvas>
+</div>
         </section>
 
         <section id="screen2">
@@ -77,11 +77,12 @@
               <%= @top_hashfeed_counter %>
 
                  
-
+<div ng-controller="hashtagFeedCtrl as hf">
 <canvas barchart options="myChartOptions" data="myData" width="800" height="400"></canvas>
+</div>
 
 
-<h1>{{x1}}  <a href="/categories/index"> Here Are Our Current Categories </a> </h1>
+<h1> <a href="/categories/index"> Here Are Our Current Categories </a> </h1>
 
             </div>
           </center>
@@ -91,7 +92,6 @@
         </section>
 
         </center>
-      </div>
 
     </div>
   </div>
