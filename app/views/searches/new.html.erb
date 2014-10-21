@@ -1,64 +1,76 @@
-<div class="intro-header">
-   <div class="col-xs-12 text-center">
-      <h1 class="hashtrek">Hashtrak</h1>
-      <h3>An Instagram Hashtag Tracking Tool</h3>
-  </div>
-      <div class="searchbar"><center>
-         <%= form_for @search, :html => {class: "form-group"} do |f| %>
-         <%= f.text_field :topic, class: "form-control", placeholder: "Track one of #{@related_hashtags.count} hashtags" %><br/>	
-     </center></div>
-
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="intro-text">
+          <span class="name">Track Any Hashtag</span>
+          <div class="searchbar">
+          <center>
+          <%= form_for @search, :html => {class: "form-group"} do |f| %>
+          <%= f.text_field :topic, class: "form-control", placeholder: "Track one of #{@related_hashtags.count} hashtags" %>
+        </center>
+        </div>
         <% end %>
+      </div>
+    </div>
+    <div class="hero"></div>
+  </div>
+</header>
+
+<div class="intro-header">
+ <div class="col-xs-12 text-center">
+  <h1 class="hashtrek">Hashtrak</h1>
+  <h3>An Instagram Hashtag Tracking Tool</h3>
+</div>
+<div class="searchbar"><center>
+ <%= form_for @search, :html => {class: "form-group"} do |f| %>
+ <%= f.text_field :topic, class: "form-control", placeholder: "Track one of #{@related_hashtags.count} hashtags" %><br/>	
+</center></div>
+
+<% end %>
 </div>
 <!-- /.container -->
 </div>
 <!-- NavBar-->
 <nav class="navbar-default" role="navigation">
-   <div class="container">
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#home"></a>
-    </div>
+ <div class="container">
+  <div class="navbar-header">
+   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="#home"></a>
+</div>
 
 </div>
 </nav> 
 
 <div class="container">
-   <div class="devs">
-       <div class="col-md-6 col-md-offset-3">
-          <h2>created by general assembly students</h2>
-          <p class="lead" style="margin-top:0">
-             <center><img src="http://bit.ly/W2LzcF"></center>
-         </a>
-     </a></p>
+ <div class="devs">
+   <div class="col-md-6 col-md-offset-3">
+    <h2>created by general assembly students</h2>
+    <p class="lead" style="margin-top:0">
+     <center><img src="http://bit.ly/W2LzcF"></center>
+   </a>
+ </a></p>
 
- </div>
+</div>
 
- <div class="row">
+<div class="row">
 
-   <div class="col-sm-4 text-center">
-      <img class="img-circle" src="https://media.licdn.com/media/p/5/005/068/07d/0bcb1e0.jpg" height="250" width="250" >
-      <h3>Brant Barger</h3>
-      <p class="lead">Back end wizard, creator of logic </p>
-  </div><!-- /.col-lg-4 -->
+ <div class="col-sm-4 text-center">
+  <img class="img-circle" src="https://media.licdn.com/media/p/5/005/068/07d/0bcb1e0.jpg" height="250" width="250" >
+  <h3>Brant Barger</h3>
+  <p class="lead">Back end wizard, creator of logic </p>
+</div><!-- /.col-lg-4 -->
 
-  <div class="col-sm-4 text-center">
-      <img class="img-circle" src="http://media-cache-ak0.pinimg.com/originals/7f/1f/f9/7f1ff9e2cc2b3be7f3f6de52c01dccd1.jpg" height="250" width="250">
-      <h3>Aaron Goldsmith</h3>
-      <p class="lead">Test Guru, jack of all trades </p>
-
-  </div><!-- /.col-lg-4 -->
-
-  <div class="col-sm-4 text-center">
-    <img class="img-circle" src="http://imgur.com/FTL3ayv.jpg" height="250" width="250">
-      <h3>Levani Maisouradze</h3>
-      <p class="lead">Front End, helper extraordinaire </p>
-  </div><!-- /.col-lg-4 -->
+<div class="col-sm-4 text-center">
+  <img class="img-circle" src="http://imgur.com/FTL3ayv.jpg" height="250" width="250">
+  <h3>Levani Maisouradze</h3>
+  <p class="lead">Front End, helper extraordinaire </p>
+</div><!-- /.col-lg-4 -->
 
 </div>
 </div>
