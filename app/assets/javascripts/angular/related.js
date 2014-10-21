@@ -1,6 +1,7 @@
 relatedManager.controller('RelatedCtrl', ['$scope', 'HashtagFeed', 'HashSize', '$location', function($scope, HashtagFeed, HashSize, $location){
    
-  var relatedhashtags = HashtagFeed.get({id: gon.hashfeed_id }, function(json){
+  var relatedhashtags = HashtagFeed.get({id: gon.hashfeed_id });
+  relatedhashtags.$promise.then(function(json){
     var tags = json.sorted_hash;
 
     barlabelreturn = function(relatedtagsjson) {
