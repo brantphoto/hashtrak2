@@ -44,13 +44,45 @@
 }
 
 
-body {
+/*body {
     height: 100%;
     width: 100%;
       font-family: "Lato", Helvetica, Arial, sans-serif;
       font-size: 12px;
       line-height: 1.72222;
       color: #34495e;
+}*/
+
+body {
+    overflow-x: hidden;
+}
+
+p {
+    font-size: 20px;
+}
+
+p.small {
+    font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+    color: #18bc9c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
 }
 .devs {
     padding-top: 70px;
@@ -59,45 +91,7 @@ body {
 .col-sm-4 {
     padding-top: 100px;
 }
-h1,
-h2,
-h3 {
-  margin-top: 30px;
-  margin-bottom: 5px;
 
-}
-h4,
-h5,
-h6 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-h6 {
-  font-weight: normal;
-}
-h1,
-.h1 {
-  font-size: 80px;
-   text-decoration: none;
-}
-
-h2,
-.h2 {
-  font-size: 63px;
-}
-h3,
-.h3 {
-  font-size: 30px;
-}
-h4,
-.h4 {
-  font-size: 20px;
-}
-p {
-  font-size: 16px;
-  line-height: 1.72222;
-  margin: 0 0 15px;
-}
 
 
 /* NAVIGATION */
@@ -153,7 +147,7 @@ p {
 header {
     text-align: center;
     color: #fff;
-    background: #c0392b
+    background: #c0392b;
 }
 
 header .container {
@@ -199,15 +193,45 @@ header .intro-text .skills {
 .hero:after {
     content:'';
     position: absolute;
-    top: 100%;
+    top: 52%;
     left: 50%;
     margin-left: -50px;
     width: 0;
     height: 0;
-    border-top: solid 50px #e15915;
+    border-top: solid 50px #c0392b;
     border-left: solid 50px transparent;
     border-right: solid 50px transparent;
 }
+
+.service-heading {
+  margin: 15px 0;
+  text-transform: none;
+}
+section {
+    padding: 100px 0;
+    h2.section-heading {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    }
+    h3.section-subheading {
+    font-size: 16px;
+    .serif-font;
+    text-transform: none;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 75px;
+    }
+}
+
+ /* SERVICES */
+
+ section.success {
+    color: #fff;
+    background: #ecf0f1;
+}
+
+
 
 
 
