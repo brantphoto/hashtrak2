@@ -1,11 +1,14 @@
 class HashtagFeedsController < ApplicationController
   respond_to :html, :json
 
+  def index
+  end
+
 
   def show
     #@hashtag_feed = HashtagFeed.where(id: params[:id]).first
 
-     @hashtag_feed = HashtagFeed.where(id: params[:id]).first
+     @hashtag_feed = HashtagFeed.where(name: params[:id]).first
      gon.hashfeed_id = @hashtag_feed.id
     @hasher = @hashtag_feed.hashtag_hash.sort_by {|k,v| v}.reverse
     @hasher.delete_if {|key, value| key == @hashtag_feed.name }

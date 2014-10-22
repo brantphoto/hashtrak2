@@ -14,6 +14,6 @@ class HashSizesController < ApplicationController
 
   private
   def get_hashtag_feed
-    @hashtag_feed = HashtagFeed.find(params[:hashtag_feed_id])
+    @hashtag_feed = HashtagFeed.where(name: params[:hashtag_feed_id]).first
   end
 end

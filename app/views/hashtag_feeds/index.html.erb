@@ -1,0 +1,17 @@
+<div ng-app="relatedManager">
+    <div ng-controller="hashSizeCtrl as hs">
+        <div ng-controller="hashtagFeedCtrl as hf">
+            <form ng-submit="hs.submit(hs.search); hf.submit(hs.search)">
+                <input type="text" name="search" ng-model="hs.search" />
+                <input type="submit" value="Submit" />
+            </form>
+
+            <div ng-show="barready" class="ng-hide">
+                hi there this is just a test
+            </div>
+            <div ng-show="lineready" class="ng-hide">
+                hi this is another test
+            </div>
+        </div>
+    </div>
+</div>

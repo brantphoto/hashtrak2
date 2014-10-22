@@ -6,7 +6,9 @@ class HashtagFeed < ActiveRecord::Base
 
   has_many :related_hastags, :through => :posts
 
-
+  def to_param
+    name
+  end
   #needs to be refactored so it can be DRY
   #validates the attributes within hashtag feed model
   # validates :name, presence: true
