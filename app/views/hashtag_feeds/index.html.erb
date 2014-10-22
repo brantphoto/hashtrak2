@@ -16,13 +16,6 @@
                 <input type="text" name="search" ng-model="hs.search" />
                 <input type="submit" />
             </form>
-
-            <div ng-show="barready" class="ng-hide">
-                hi there this is just a test
-            </div>
-            <div ng-show="lineready" class="ng-hide">
-                hi this is another test
-            </div>
             </center>
           </div>
         </div>
@@ -64,7 +57,7 @@
       </div>
     </div>
   </section>
-
+<div ng-show="barready" class="ng-hide">
   <section class="success" id="about">
     <div class="container">
       <div class="row">
@@ -83,6 +76,8 @@
       </div>
     </div>
   </section>
+</div>
+<div ng-show="lineready" class="ng-hide">
 
   <section class="success1" id="about">
     <div class="container">
@@ -102,6 +97,7 @@
       </div>
     </div>
   </section>
+
 
   <section class="success" id="about">
         <div class="container">
@@ -159,3 +155,4 @@
     </div>
   </div>
 </section>
+</div> <!-- ng show line ready div -->
