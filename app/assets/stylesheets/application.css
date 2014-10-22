@@ -15,45 +15,11 @@
 
 
 
-.intro-header {
-    background-color: rgb(242,200,213);
-    padding-bottom: 300px;
-    padding-top: 190px;
-    height: 100%;
-}
-
-.hashtrek {
-    text-align: center;
-    font-size: 100px;
-    margin-bottom: -27px;
-    color: #34495e;
-    text-shadow: 1px 1px #ffffff;
-}
-.gimmicks {
-    text-align: center;
-    font-size: 50px;
-}
 .searchbar {
     padding-top: 4%;
     margin: 0 auto;
     color: black;
 }
-
-.form-control {
-    width: 75%;
-    height:70px;
-    font-size: 30px;
-}
-
-
-/*body {
-    height: 100%;
-    width: 100%;
-      font-family: "Lato", Helvetica, Arial, sans-serif;
-      font-size: 12px;
-      line-height: 1.72222;
-      color: #34495e;
-}*/
 
 body {
     overflow-x: hidden;
@@ -86,14 +52,6 @@ h6 {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
-.devs {
-    padding-top: 70px;
-    padding-bottom: 200px;
-}
-.col-sm-4 {
-    padding-top: 100px;
-}
-
 
 
 /* NAVIGATION */
@@ -146,10 +104,11 @@ h6 {
 }
 
 /* HEADER */
-header {
+header, .devs {
     text-align: center;
     color: #fff;
     background: #c0392b;
+    padding-bottom: 10px;
 }
 
 header .container {
@@ -190,20 +149,8 @@ header .intro-text .skills {
     }
 }
 
-/* CSS TRIANGLE AT BOTTOM OF DIV */
+/* GENERAL SECTION CSS */
 
-.hero:after {
-    content:'';
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    margin-left: -50px;
-    width: 0;
-    height: 0;
-    border-top: solid 50px #c0392b;
-    border-left: solid 50px transparent;
-    border-right: solid 50px transparent;
-}
 
 .service-heading {
   margin: 15px 0;
@@ -235,6 +182,14 @@ section.success {
 
 section.success1 {
     background:#fff;
+    color: #7f8c8d;
+}
+
+/*  CREATORS */
+
+
+.col-sm-4 {
+    padding-top: 100px;
 }
 
 
