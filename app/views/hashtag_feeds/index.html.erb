@@ -2,6 +2,7 @@
 <div ng-app="relatedManager">
     <div ng-controller="hashSizeCtrl as hs">
         <div ng-controller="hashtagFeedCtrl as hf">
+          <div ng-controller="searchCtrl as s">
 <header>
 
   <div class="container">
@@ -12,7 +13,7 @@
           <div class="searchbar">
             <center>
 
-            <form ng-submit="hs.submit(hs.search); hf.submit(hs.search)">
+            <form ng-submit="hs.submit(hs.search); hf.submit(hs.search); s.addSearch(hs.search)">
                 <input type="text" name="search" ng-model="hs.search" />
                 <input type="submit" />
             </form>
@@ -72,6 +73,7 @@
         </div>
         <div class="col-lg-4 text-left">
           <canvas barchart options="myChartOptions" data="myData" width="700" height="400"></canvas>
+        </div>
         </div>
       </div>
     </div>

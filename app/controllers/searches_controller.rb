@@ -9,15 +9,18 @@ class SearchesController < ApplicationController
     @related_hashtags = RelatedHashtag.all
   end
 
+  def show
+    @search = Search.where(topic: params[:id]).first
+    respond_with @search
+  end
+
   def create
     @search = Search.new(params.require(:search).permit(:topic, :hashtag_feed))
     if @search.save
       @search.preptopic
       recentposts(@search.topic)
       @search.hashtag_feed = @y
-      #gon.hashfeed_name = @search.topic
       @search.save
-      redirect_to hashtag_feed_path(@y)
     else
       respond_to do |format|
         format.html { render action: 'new' }

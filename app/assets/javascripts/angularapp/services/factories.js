@@ -15,3 +15,11 @@ relatedManager.factory('HashSize', ['$resource', function($resource){
 		);
 }]);
 
+relatedManager.factory('Search', ['$resource', function($resource){
+
+	return $resource('/searches/:id',
+		{ id: '@id' },
+		{update: {method: 'PATCH'} }
+		);
+}]);
+
