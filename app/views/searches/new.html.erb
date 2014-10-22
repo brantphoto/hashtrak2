@@ -1,65 +1,147 @@
-<div class="intro-header">
-   <div class="col-xs-12 text-center">
-      <h1 class="hashtrek">Hashtrak</h1>
-      <h3>An Instagram Hashtag Tracking Tool</h3>
-  </div>
-      <div class="searchbar"><center>
-         <%= form_for @search, :html => {class: "form-group"} do |f| %>
-         <%= f.text_field :topic, class: "form-control", placeholder: "Track one of #{@related_hashtags.count} hashtags" %><br/>	
-     </center></div>
-
-        <% end %>
-</div>
-<!-- /.container -->
-</div>
-<!-- NavBar-->
-<nav class="navbar-default" role="navigation">
-   <div class="container">
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#home"></a>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="intro-text">
+          <span class="name">Track Any Hashtag</span>
+          <div class="searchbar">
+            <center>
+              <%= form_for @search, :html => {class: "form-group"} do |f| %>
+              <%= f.text_field :topic, class: "form-control", placeholder: "Track one of #{@related_hashtags.count} hashtags" %>
+            </center>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="hero"></div>
     </div>
+  </header>
 
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">What We Provide</h2>
+          <h3 class="section-subheading text-muted">Hashtrak gives you the necessary information to discover & promote</h3>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Related Hashtags</h4>
+          <p class="text-muted">Ever wondered what the most related hashtag to #paleodiet is? Looking for another photography community to join? We'll give you the most relevant hashtag to what you're searching for!</p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Hashtag Size</h4>
+          <p class="text-muted">How do you know which hashtag is trending? Or uncool anymore? Hashtrak shows the velocity of hashtags and the growth of hashtags over time, so you'll know </p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Category</h4>
+          <p class="text-muted">If you're searching a super niche hastag, we</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="success" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>Relevant Hashtags</h2>
+          <hr class="star-light">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-2">
+          <p>According our calculations, here are the most relevant hashtags to what you just searched. It works on the law of averages, so the more times people search that hashtag, the more accurate it will become!</p>
+        </div>
+        <div class="col-lg-4">
+          <p>GRAPH GOES HERE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="success" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>Hashtag Size Over Time</h2>
+          <hr class="star-light">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-2">
+          <p>GRAPH GOES HERE</p>
+        </div>
+        <div class="col-lg-4">
+          <p>Hashtrak is able to accurately portray how fast a hashtag is growing in popularity. You can use this information to discover if a certain hashtag is "hot" or losing popularity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="intro-header">
+   <div class="col-xs-12 text-center">
+    <h1 class="hashtrek">Hashtrak</h1>
+    <h3>An Instagram Hashtag Tracking Tool</h3>
+  </div>
+  <div class="searchbar"><center>
+   <%= form_for @search, :html => {class: "form-group"} do |f| %>
+   <%= f.text_field :topic, class: "form-control", placeholder: "Track one of #{@related_hashtags.count} hashtags" %><br/>	
+ </center></div>
+
+ <% end %>
 </div>
-</nav> 
+
+
+
+
+
+
+
+
+
+
 
 <div class="container">
-   <div class="devs">
-       <div class="col-md-6 col-md-offset-3">
-          <h2>created by general assembly students</h2>
-          <p class="lead" style="margin-top:0">
-             <center><img src="http://bit.ly/W2LzcF"></center>
-         </a>
-     </a></p>
-
- </div>
-
- <div class="row">
-
-   <div class="col-sm-4 text-center">
-      <img class="img-circle" src="https://media.licdn.com/media/p/5/005/068/07d/0bcb1e0.jpg" height="250" width="250" >
-      <h3>Brant Barger</h3>
-      <p class="lead">Back end wizard, creator of logic </p>
-  </div><!-- /.col-lg-4 -->
-
-  <div class="col-sm-4 text-center">
-      <img class="img-circle" src="http://media-cache-ak0.pinimg.com/originals/7f/1f/f9/7f1ff9e2cc2b3be7f3f6de52c01dccd1.jpg" height="250" width="250">
-      <h3>Aaron Goldsmith</h3>
-      <p class="lead">Test Guru, jack of all trades </p>
-
-  </div><!-- /.col-lg-4 -->
-
-  <div class="col-sm-4 text-center">
-    <img class="img-circle" src="http://imgur.com/FTL3ayv.jpg" height="250" width="250">
-      <h3>Levani Maisouradze</h3>
-      <p class="lead">Front End, helper extraordinaire </p>
-  </div><!-- /.col-lg-4 -->
+ <div class="devs">
+   <div class="col-md-6 col-md-offset-3">
+    <h2>created by general assembly students</h2>
+    <p class="lead" style="margin-top:0">
+     <center><img src="http://bit.ly/W2LzcF"></center>
+   </a>
+ </a></p>
 
 </div>
+
+<div class="row">
+
+ <div class="col-sm-4 text-center">
+  <img class="img-circle" src="https://media.licdn.com/media/p/5/005/068/07d/0bcb1e0.jpg" height="250" width="250" >
+  <h3>Brant Barger</h3>
+  <p class="lead">Back end wizard, creator of logic </p>
+</div><!-- /.col-lg-4 -->
+
+<div class="col-sm-4 text-center">
+  <img class="img-circle" src="http://imgur.com/FTL3ayv.jpg" height="250" width="250">
+  <h3>Levani Maisouradze</h3>
+  <p class="lead">Front End, helper extraordinaire </p>
+</div><!-- /.col-lg-4 -->
+
+</div>
+</div>  
 </div>
 
