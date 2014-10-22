@@ -1,8 +1,9 @@
 
 <div ng-app="relatedManager">
+  <div ng-controller="searchCtrl as s">
     <div ng-controller="hashSizeCtrl as hs">
         <div ng-controller="hashtagFeedCtrl as hf">
-          <div ng-controller="searchCtrl as s">
+            
 <header>
 
   <div class="container">
@@ -13,8 +14,8 @@
           <div class="searchbar">
             <center>
 
-            <form ng-submit="hs.submit(hs.search); hf.submit(hs.search); s.addSearch(hs.search)">
-                <input type="text" name="search" ng-model="hs.search" />
+            <form ng-submit="s.addSearch(s.search)">
+                <input type="text" name="search" ng-model="s.search" />
                 <input type="submit" />
             </form>
             </center>

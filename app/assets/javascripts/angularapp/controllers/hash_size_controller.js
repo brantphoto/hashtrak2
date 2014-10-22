@@ -1,7 +1,6 @@
 relatedManager.controller('hashSizeCtrl', ['$scope', 'HashSize', '$location', function($scope, HashSize, $location){
 
-  this.search = '';
-  this.submit = function(searchsubmission){
+  $scope.$on('searchSavedEvent', function(event, searchsubmission){
     var hashsizes = HashSize.query({hashtag_feed_id: searchsubmission});
         hashsizes.$promise.then(function(json) {
 console.log(json)
@@ -123,5 +122,5 @@ console.log(json)
         legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
 
     };
-    };
+    });
 }]);

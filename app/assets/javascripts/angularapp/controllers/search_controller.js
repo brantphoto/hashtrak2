@@ -4,12 +4,13 @@ relatedManager.controller('searchCtrl', ['$scope', 'Search', '$location', functi
 
   this.addSearch = function(topic){
     
-      var newSearch = new Search();
-      newSearch.topic = topic
-      console.log(newSearch);
-      newSearch.$save();
+      $scope.newSearch = new Search();
+      $scope.newSearch.topic = topic;
+      console.log("this is the topic" + topic);
+      console.log("this is the search object " + $scope.newSearch.topic);
+      $scope.newSearch.$save()
+      $scope.$broadcast('searchSavedEvent', topic);
   };
-      
-    
-  
+
+
 }]);

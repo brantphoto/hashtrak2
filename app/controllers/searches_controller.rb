@@ -2,11 +2,8 @@ class SearchesController < ApplicationController
   respond_to :json 
 
   def index
-  end
-
-  def new
-  	@search = Search.new
-    @related_hashtags = RelatedHashtag.all
+    @searches = Search.all
+    respond_with @searches
   end
 
   def show
@@ -15,12 +12,11 @@ class SearchesController < ApplicationController
   end
 
   def create
-    @search = Search.new(params.require(:search).permit(:topic, :hashtag_feed))
+    @search = Search.new(search_params)
     if @search.save
       @search.preptopic
       recentposts(@search.topic)
-      @search.hashtag_feed = @y
-      @search.save
+      Search.find(@search.id).update(hashtag_feed:@y) 
     else
       respond_to do |format|
         format.html { render action: 'new' }
@@ -80,7 +76,6 @@ class SearchesController < ApplicationController
       z = InstaUser.where(userid:iguser, username:igusername).first_or_create
       if Post.exists?(:instagram_id => id) === false
         p = Post.create(hashtag_hash:r, instagram_id:id, location:location, created_time:date, hashtag_feed:@y, insta_user:z)
-        #relate_to_tag(p)
       end
     end
     # y is the HashtagFeed
@@ -114,4 +109,10 @@ class SearchesController < ApplicationController
 
   def destroy
   end 
+
+  private
+  def search_params
+    params.require(:search).permit(:topic, :hashtag_feed_id)
+  end
+
 end
