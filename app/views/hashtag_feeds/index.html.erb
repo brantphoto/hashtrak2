@@ -14,7 +14,7 @@
 
             <form ng-submit="hs.submit(hs.search); hf.submit(hs.search)">
                 <input type="text" name="search" ng-model="hs.search" />
-                <input type="submit" value="Submit" />
+                <input type="submit" />
             </form>
 
             <div ng-show="barready" class="ng-hide">
@@ -47,7 +47,7 @@
             <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">Related Hashtags</h4>
-          <p class="text-muted">Ever wondered what the most related hashtag to #paleodiet is? Looking for another photography community to join? We'll give you the most relevant hashtag to what you're searching for!</p>
+          <p class="text-muted">Ever wondered what the most related hashtag to #paleodiet is? Looking for another photography community to join? We're here to help you find relevant communities.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
@@ -63,7 +63,7 @@
             <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading">Category</h4>
-          <p class="text-muted">If you're searching a super niche hastag, we</p>
+          <p class="text-muted">If you're searching a super niche hastag, we are able to find the category that it belongs to. That let's you broaden your search and find users with the same interest.</p>
         </div>
       </div>
     </div>
@@ -73,54 +73,39 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2>Relevant Hashtags</h2>
-
+          <h1>Relevant Hashtags</h1>
           <hr class="star-light">
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-lg-offset-2">
+        <div class="col-lg-4 col-lg">
           <p>According our calculations, here are the most relevant hashtags to what you just searched. It works on the law of averages, so the more times people search that hashtag, the more accurate it will become!</p>
         </div>
-        <div class="col-lg-4">
-
-<canvas barchart options="myChartOptions" data="myData" width="800" height="400"></canvas>
-GRAPH GOES HERE</p>
+        <div class="col-lg-4 text-left">
+          <canvas barchart options="myChartOptions" data="myData" width="700" height="400"></canvas>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="success" id="about">
+  <section class="success1" id="about">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2>Hashtag Size Over Time</h2>
+          <h1>Hashtag Size Over Time</h1>
           <hr class="star-light">
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-lg-offset-2">
-          <p>GRAPH GOES HERE</p>
-          <canvas linechart options="options" data="lineData" width="300" height="300"></canvas>
+        <div class="col-lg-4 col-lg text-right">
+          <canvas linechart options="options" data="lineData" width="700" height="400"></canvas>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-lg-offset-4">
           <p>Hashtrak is able to accurately portray how fast a hashtag is growing in popularity. You can use this information to discover if a certain hashtag is "hot" or losing popularity.</p>
         </div>
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="container">
  <div class="devs">
@@ -147,10 +132,3 @@ GRAPH GOES HERE</p>
   <p class="lead">Front End, helper extraordinaire </p>
 </div><!-- /.col-lg-4 -->
 
-</div>
-</div>  
-</div>
-
-        </div>
-    </div>
-</div>
