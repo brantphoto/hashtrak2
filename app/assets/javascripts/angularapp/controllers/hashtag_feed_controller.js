@@ -32,9 +32,9 @@ relatedManager.controller('hashtagFeedCtrl', ['$scope', 'HashtagFeed', '$locatio
           labels: finalbardata[0],
           datasets: [
             {
-            fillColor: "rgba(220,220,220,0.5)",
+            fillColor: "#c0392b",
             strokeColor: "rgba(220,220,220,0.8)",
-            highlightFill: "rgba(220,220,220,0.75)",
+            highlightFill: "#FF5E4B",
             highlightStroke: "rgba(220,220,220,1)", 
             data: finalbardata[1]
           }

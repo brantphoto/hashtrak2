@@ -35,11 +35,11 @@ console.log(json)
             {
                 label: "My First dataset",
                 fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
+                strokeColor: "#c0392b",
+                pointColor: "#c0392b",
                 pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
+                pointHighlightFill: "#FF5E4B",
+                pointHighlightStroke: "#FF5E4B",
                 data: finallinedata[1]
             }
         ]
