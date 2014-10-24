@@ -191,6 +191,11 @@ section.success1 {
     padding-top: 100px;
 }
 
+/* this is for the ng waypoints*/
+
+.iconz {
+    visibility: hidden;
+  }
 
 
 
