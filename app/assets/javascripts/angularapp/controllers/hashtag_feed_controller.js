@@ -4,7 +4,6 @@ relatedManager.controller('hashtagFeedCtrl', ['$scope', 'HashtagFeed', '$locatio
       var relatedhashtags = HashtagFeed.get({id: searchsubmission });
       relatedhashtags.$promise.then(function(json){
         var tags = json.sorted_hash;
-
         barlabelreturn = function(relatedtagsjson) {
 
           loopsize = function(objectcollection) {
@@ -41,6 +40,10 @@ relatedManager.controller('hashtagFeedCtrl', ['$scope', 'HashtagFeed', '$locatio
           ]
         };
       $scope.barready = true;
+      $scope.category = json['category']['name'];
+      $scope.definition = json['definition'];
+      $scope.hashfeedname = json['name'];
+      console.log($scope.category);
     });
   });
 }]);

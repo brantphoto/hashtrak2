@@ -1,5 +1,5 @@
 class HashtagFeedSerializer < ActiveModel::Serializer
-  attributes :id, :sorted_hash, :top_hashfeed,:category, :definition
+  attributes :id, :name, :sorted_hash, :top_hashfeed,:category, :definition
 
   def sorted_hash
   @e = object.hashtag_hash.sort_by {|k,v| v.to_i}.reverse[1..10]
