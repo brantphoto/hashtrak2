@@ -92,7 +92,7 @@ console.log(json)
         scaleGridLineWidth : 1,
 
         //Boolean - Whether the line is curved between points
-        bezierCurve : true,
+        bezierCurve : false,
 
         //Number - Tension of the bezier curve between points
         bezierCurveTension : 0.4,

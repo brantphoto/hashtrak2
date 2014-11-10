@@ -32,7 +32,8 @@
                         <div zum-waypoint="favcons" down="flags.down" up="flags.up" offset="70%">
                             <div class="row text-center">
                                 <div class="col-md-4">
-                                    <span class="iconz fa-stack fa-4x" ng-class="{fadeIn: favcons.flags.down, iconz: favcons.flags.up}">
+                                    <!-- add to span below for animation ng-class="{fadeIn: favcons.flags.down, iconz: favcons.flags.up}" -->
+                                    <span class="fa-stack fa-4x" >
                                         <img src="http://cdn4.freepik.com/image/th/318-55018.jpg">
                                     </span>
                                     <h4 class="service-heading">Related Hashtags</h4>
@@ -41,7 +42,7 @@
                                     </p>
                                 </div>
                                 <div class="col-md-4">
-                                    <span class="iconz fa-stack fa-4x" ng-class="{fadeIn: favcons.flags.down, iconz: favcons.flags.up}">
+                                    <span class="fa-stack fa-4x">
                                         <img src="http://cdn2.freepik.com/image/th/318-55114.png">
                                     </span>
                                     <h4 class="service-heading">Hashtag Size</h4>
@@ -50,7 +51,7 @@
                                     </p>
                                 </div>
                                 <div class="col-md-4">
-                                    <span class="iconz fa-stack fa-4x" ng-class="{fadeIn: favcons.flags.down, iconz: favcons.flags.up}">
+                                    <span class="fa-stack fa-4x">
                                         <img src="http://www.sproutsanfrancisco.com/shop/media/catalog/product/cache/1/small_image/150x150/9df78eab33525d08d6e5fb8d27136e95/n/e/nesting_dolls.jpg">
                                     </span>
                                     <h4 class="service-heading">Category</h4>
@@ -95,7 +96,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-4 col-lg text-right">
-                                    <canvas linechart options="options" data="lineData" width="700" height="400"></canvas>
+                                    <canvas linechart options=" lineChartOptions" data="lineData" width="700" height="400"></canvas>
                                 </div>
                                 <div class="col-lg-4 col-lg-offset-4">
                                     <p>Hashtrak is able to accurately portray how fast a hashtag is growing in popularity. You can use this information to discover if a certain hashtag is "hot" or losing popularity.</p>
