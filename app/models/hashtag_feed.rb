@@ -1,5 +1,5 @@
 class HashtagFeed < ActiveRecord::Base
-  belongs_to :category
+  belongs_to :category, counter_cache: true
   has_many :hash_sizes
   has_many :posts
   has_many :searches
